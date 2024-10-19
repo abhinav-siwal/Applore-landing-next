@@ -12,8 +12,12 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        bricolage: ['"Bricolage Grotesque"', 'sans-serif'], // Add the custom font here
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
