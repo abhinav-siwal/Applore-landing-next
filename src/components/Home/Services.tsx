@@ -3,7 +3,7 @@ import React from 'react';
 
 const Services: React.FC = () => {
   return (
-    <div className="mt-10 w-full mx-auto max-w-[70rem] px-[1rem]">
+    <div className="mt-10 w-full mx-auto max-w-[1200px] px-[1rem]">
       {/* Idea section */}
       <div className="mb-[2rem]">
         <h1 className="text-3xl font-bold">

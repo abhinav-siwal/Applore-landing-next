@@ -26,7 +26,7 @@ const HeroSection = () => {
 
       {/* Main Content Section */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white -mt-28">
-        <h1 className="text-5xl font-bold text-foreground font-bricolage">
+        <h1 className="text-5xl font-bold text-foregroun font-bricolage">
           From idea to <span className="text-blue-500">go-live</span> in
         </h1>
         <h2 className="text-6xl italic mt-4">60 days</h2>
