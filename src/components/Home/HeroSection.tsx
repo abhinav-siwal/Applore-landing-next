@@ -40,7 +40,7 @@ const HeroSection = () => {
           <span>→</span> {/* Arrow symbol */}
         </button>
       </div>
-      <div className="absolute bottom-20 w-full text-center text-white text-lg">
+      <div className="absolute bottom-20 w-full text-center text-gray-500 text-lg">
   Trusted By
 </div>
 
