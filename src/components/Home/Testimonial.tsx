@@ -13,27 +13,27 @@ const Testimonial = () => {
           priority
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center gap-3 text-white z-10 ">
-          <h1 className="text-4xl font-semibold font-serif">
+          <h1 className="text-4xl font-semibold bricolage-grotesque-medium">
             Bring your 
-            <span className="italic font-bricolage"> vision</span>
+            <span className="libre-baskerville-regular-italic"> Vision</span>
           </h1>
-          <h2 className="text-2xl font-light">
-            to life with 
-            <span className="font-medium"> custom Applications</span>
+          <h2 className="text-4xl bricolage-grotesque-medium">
+            to Life with 
+            <span className="font-medium libre-baskerville-regular-italic"> Custom Applications</span>
           </h2>
 
-          <button className="mt-8 bg-white text-black px-6 py-3 rounded-full flex items-center space-x-2">
-            <span>Start your project</span>
-            <span>→</span> {/* Arrow symbol */}
+          <button className="mt-8 bg-white font-semibold text-black px-6 py-3 rounded-full flex items-center space-x-2">
+            <span >Start your project now</span>
+            <span className='text-xl'>→</span> {/* Arrow symbol */}
           </button>
         </div>
       </div>
       {/* Testimonial */}
       <div className='text-center mt-20'>
-        <h1 className="text-3xl font-bold bg-gradient-to-b from-[#1A2224] to-[#1A222480] bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold bg-gradient-to-b from-[#1A2224] to-[#1A222480] bg-clip-text text-transparent bricolage-grotesque-bold">
           What our clients say
         </h1>
-        <h1 className="text-3xl font-bold bg-gradient-to-b from-[#1A2224] to-[#1A222480] bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold bg-gradient-to-b from-[#1A2224] to-[#1A222480] bg-clip-text text-transparent bricolage-grotesque-bold">
           about our work
         </h1>
       </div>

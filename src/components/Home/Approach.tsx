@@ -20,26 +20,26 @@ const Approach = () => {
           alt="UI/UX Design"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center gap-3 text-white z-10">
-          <h1 className="text-4xl font-semibold">Embrace</h1>
-          <h2 className="text-2xl">Innovation:</h2>
-          <h3 className="text-3xl font-semibold">Beyond basix</h3>
+          <h1 className="text-4xl font-semibold bricolage-grotesque-medium">Embrace</h1>
+          <h2 className="text-2xl libre-baskerville-regular-italic">Innovation:</h2>
+          <h3 className="text-3xl font-semibold bricolage-grotesque-medium">Beyond <span className='libre-baskerville-regular-italic'>Basic</span></h3>
           
-          <button className="mt-8 bg-white text-black px-6 py-3 rounded-full flex items-center space-x-2">
+          <button className="mt-8 bg-white text-black font-semibold px-6 py-3 rounded-full flex items-center space-x-2">
             <span>Get Free Quote</span>
             <span>→</span> {/* Arrow symbol */}
           </button>
 
           <div className="mt-10 flex space-x-6 text-white">
             <div className="flex items-center">
-              <Image src="Home/check.svg" alt="Check Icon" width={20} height={20} className="mr-1" />
+              <Image src="Home/check.svg" alt="Check Icon" width={20} height={20} className="mr-2" />
               <span>Customer solution</span>
             </div>
             <div className="flex items-center">
-              <Image src="Home/check.svg" alt="Check Icon" width={20} height={20} className="mr-1" />
+              <Image src="Home/check.svg" alt="Check Icon" width={20} height={20} className="mr-2" />
               <span>Expert support</span>
             </div>
             <div className="flex items-center">
-              <Image src="Home/check.svg" alt="Check Icon" width={20} height={20} className="mr-1" />
+              <Image src="Home/check.svg" alt="Check Icon" width={20} height={20} className="mr-2" />
               <span>Proven result</span>
             </div>
           </div>
@@ -48,17 +48,11 @@ const Approach = () => {
 
       {/* Title Image Above Cards */}
       <div className="flex justify-center my-10">
-        <Image 
-          src="/Home/OurApproach.svg" 
-          alt="Our Approach" 
-          width={300} // Set an appropriate width
-          height={100} // Adjust height as necessary
-          className="object-contain" // Ensure it scales properly
-        />
+       <h1 className='text-4xl bricolage-grotesque-bold bg-gradient-to-b from-[#1A2224] to-[#1A222480] bg-clip-text text-transparent'>Our Approach</h1>
       </div>
 
       {/* Card Display Code */}
-      <div className="flex flex-wrap justify-center gap-[1.5rem]">
+      <div className="flex flex-wrap justify-center gap-[1.5rem] relative">
         {cards.map((card, index) => (
           <div
             key={card.id}
@@ -67,7 +61,7 @@ const Approach = () => {
             }`}
           >
             {/* Large Number Overlay */}
-            <div className="absolute left-[-4rem] top-[-5rem] transform text-[16rem] font-semibold text-gray-300 opacity-20">
+            <div className="absolute left-[-4rem] top-[-7rem] transform text-[16rem] font-semibold text-gray-300 opacity-20">
               {card.id < 10 ? `0${card.id}` : card.id}
             </div>
             {/* Icon */}
@@ -75,10 +69,10 @@ const Approach = () => {
               <Image src={card.icon} alt={`Icon for ${card.title}`} width={30} height={30} />
             </div>
             {/* Title and Description at the Top */}
-            {/* <div className="flex flex-col items- mt-4">
-              <h3 className="text-lg font-semibold z-10">{card.title}</h3>
-              <p className="z-10 text-base">{card.content}</p>
-            </div> */}
+            <div className="flex flex-col items- mt-4 absolute top-14">
+              <h3 className="text-lg font-semibold z-10 bricolage-grotesque-bold">{card.title}</h3>
+              <p className="z-10 text-base libre-baskerville-regular-italic mt-3">{card.content}</p>
+            </div>
             {/* Image at the bottom right */}
             <div className="absolute bottom-0 right-0 pr-0 pb-0 p-2">
               <Image 

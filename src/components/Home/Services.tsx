@@ -6,10 +6,10 @@ const Services: React.FC = () => {
     <div className="mt-10 w-full mx-auto max-w-[1200px] px-[1rem]">
       {/* Idea section */}
       <div className="mb-[2rem]">
-        <h1 className="text-3xl font-bold">
-          Shaping ideas into <span className="italic font-light">results</span>
+        <h1 className="text-3xl font-bold bricolage-grotesque-bold">
+          Shaping ideas into <span className="italic libre-baskerville-regular-italic">results</span>
         </h1>
-        <p className="mt-[1rem] text-gray-600">
+        <p className="mt-[1rem] text-gray-800">
           At Applore, we transform your concepts into impactful solutions that drive success.
           Let us help you navigate the path from vision to reality with our expertise and
           innovative approach.
@@ -38,72 +38,60 @@ const Services: React.FC = () => {
 
       {/* Cards */}
       <div className='mt-20'>
-        <h1 className='text-3xl font-bold'>Key services</h1>
+        <h1 className='text-3xl  bricolage-grotesque-bold'>Key services</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-          {/* 1st Card */}
-          <div className="flex flex-col items-start"> {/* Change items-center to items-start */}
-            <div className="relative w-full h-96 mb-4">
-              <Image 
-                src="/Home/service1.svg"
-                layout="fill"
-                objectFit="contain"
-                alt="iOS App Development"
-              />
-            </div>
-            <h2 className="text-xl font-semibold mb-2">iOS App Development</h2>
-            <p className="text-gray-600">
-              We create high-performance iOS apps that offer exceptional user experiences, tailored to your business needs.
-            </p>
-          </div>
+          {/* 1st card  */}
+          <div>
+  <Image
+    src="/Home/PhoneImage.png"
+    alt="Design"
+    width={100}
+    height={100}
+    className="w-[560px] h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
+  />
+  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">iOS App Development</h2>
+  <p className='opacity-80'>We create high-performance iOS apps that offer exceptional user experiences, tailored to your business needs. </p>
+</div>
+{/* 2nd */}
+<div>
+  <Image
+    src="/Home/AppDev.png"
+    alt="Design"
+    width={100}
+    height={100}
+    className="w-[560px] h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
+  />
+  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">Android App Development</h2>
+  <p className='opacity-80'>Our team builds engaging Android applications that stand out on the Google Play Store and drive user retention. </p>
+</div>
+{/* 3rd */}
+<div>
+  <Image
+    src="/Home/CrossPlatform.png"
+    alt="Design"
+    width={100}
+    height={100}
+    className="w-[560px] h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
+  />
+  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">Cross Platform Development</h2>
+  <p className='opacity-80'>We provide efficient cross-platform solutions that deliver a consistent experience across devices while minimizing costs. </p>
+</div>
+{/* 4rth */}
+<div>
+  <Image
+    src="/Home/UIDesign.png"
+    alt="Design"
+    width={100}
+    height={100}
+    className="w-[560px] h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
+  />
+  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">Mobile UX/UI design</h2>
+  <p className='opacity-80'>A multi-page website with CMS support, thoughtful UI system and effective code </p>
+</div>
 
-          {/* 2nd Card */}
-          <div className="flex flex-col items-start"> {/* Change items-center to items-start */}
-            <div className="relative w-full h-96 mb-4">
-              <Image 
-                src="/Home/service2.svg"
-                layout="fill"
-                objectFit="contain"
-                alt="Android App Development"
-              />
-            </div>
-            <h2 className="text-xl font-semibold mb-2">Android App Development</h2>
-            <p className="text-gray-600">
-              We specialize in developing Android apps that are fast, scalable, and deliver great user experiences.
-            </p>
-          </div>
 
-          {/* 3rd Card */}
-          <div className="flex flex-col items-start"> {/* Change items-center to items-start */}
-            <div className="relative w-full h-96 mb-4">
-              <Image 
-                src="/Home/service3.svg"
-                layout="fill"
-                objectFit="contain"
-                alt="Web Development"
-              />
-            </div>
-            <h2 className="text-xl font-semibold mb-2">Web Development</h2>
-            <p className="text-gray-600">
-              We build responsive, high-performance websites that engage users and drive conversions.
-            </p>
-          </div>
 
-          {/* 4th Card */}
-          <div className="flex flex-col items-start"> {/* Change items-center to items-start */}
-            <div className="relative w-full h-96 mb-4">
-              <Image 
-                src="/Home/service4.svg"
-                layout="fill"
-                objectFit="contain"
-                alt="UI/UX Design"
-              />
-            </div>
-            <h2 className="text-xl font-semibold mb-2">UI/UX Design</h2>
-            <p className="text-gray-600">
-              Our UI/UX design services ensure your product looks stunning and provides seamless user interactions.
-            </p>
-          </div>
-        </div>
+         </div>
       </div>
     </div>
   );
