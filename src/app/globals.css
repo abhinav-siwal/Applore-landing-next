@@ -127,3 +127,6 @@
   width: calc(200%); /* Ensure the container is wide enough for both sets of logos */
 }
 
+.animate-marquee:hover {
+  animation: none; /* Pause the animation */
+}

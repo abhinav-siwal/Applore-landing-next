@@ -3,7 +3,7 @@ import React from "react";
 
 const TestimonialCard = () => {
   return (
-    <div className=" w-[350px] h-[450px] rounded-lg shadow-md  overflow-hidden">
+    <div className=" max-w-[350px] h-[450px] rounded-lg shadow-md">
       {/* Video Frame */}
       <div className="h-[250px]  p-2">
         <iframe
