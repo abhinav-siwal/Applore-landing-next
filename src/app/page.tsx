@@ -1,5 +1,5 @@
 import Approach from "@/components/Home/Approach";
-import CardSlider from "@/components/Home/CardSlider";
+import CardSlider from "@/components/Home/lib/CardSlider";
 import Faq from "@/components/Home/Faq";
 import Footer from "@/components/Home/Footer";
 import HeroSection from "@/components/Home/HeroSection";
@@ -14,7 +14,7 @@ export default function Home() {
     <Approach/>
     <Testimonial/>
     <Faq/>
-    {/* <Footer/> */}
+    <Footer/>
     </>
   );
 }

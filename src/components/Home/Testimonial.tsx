@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import CardSlider from './CardSlider';
+import CardSlider from './lib/CardSlider';
 
 const Testimonial = () => {
   return (

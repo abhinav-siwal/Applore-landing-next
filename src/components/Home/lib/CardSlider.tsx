@@ -21,7 +21,7 @@ const CardSlider = () => {
           {cards.map((_, index) => (
             <CarouselItem
               key={index}
-              className="w-full md:basis-1/2 lg:basis-1/3 p-4"
+              className="w-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3 p-4"
             >
               <TestimonialCard  />
             </CarouselItem>

@@ -17,24 +17,25 @@ const Services: React.FC = () => {
       </div>
 
       {/* Services stats */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-[2rem]">
-        <div>
-          <h2 className="text-4xl font-bold">500+</h2>
-          <p className="mt-[0.5rem] text-gray-500">Applications Developed</p>
-        </div>
-        <div>
-          <h2 className="text-4xl font-bold">750+</h2>
-          <p className="mt-[0.5rem] text-gray-500">Live Websites Developed</p>
-        </div>
-        <div>
-          <h2 className="text-4xl font-bold">200,000+</h2>
-          <p className="mt-[0.5rem] text-gray-500">Users Downloaded</p>
-        </div>
-        <div>
-          <h2 className="text-4xl font-bold">400+</h2>
-          <p className="mt-[0.5rem] text-gray-500">Clients</p>
-        </div>
-      </div>
+      <div className="grid grid-cols-2 gap-y-[4rem] gap-x-[2rem]">
+  <div>
+    <h2 className="sm:text-4xl text-2xl font-bold">500+</h2>
+    <p className="mt-[0.5rem] text-gray-500">Applications Developed</p>
+  </div>
+  <div>
+    <h2 className="sm:text-4xl text-2xl font-bold">750+</h2>
+    <p className="mt-[0.5rem] text-gray-500">Live Websites Developed</p>
+  </div>
+  <div>
+    <h2 className="sm:text-4xl text-2xl font-bold">200,000+</h2>
+    <p className="mt-[0.5rem] text-gray-500">Users Downloaded</p>
+  </div>
+  <div>
+    <h2 className="sm:text-4xl text-2xl font-bold">400+</h2>
+    <p className="mt-[0.5rem] text-gray-500">Clients</p>
+  </div>
+</div>
+
 
       {/* Cards */}
       <div className='mt-20'>

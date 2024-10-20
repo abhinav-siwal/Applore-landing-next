@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import HeroSectionCarousel from './HeroSectionCarousel';
+import HeroSectionCarousel from './lib/HeroSectionCarousel';
 
 const HeroSection = () => {
   return (

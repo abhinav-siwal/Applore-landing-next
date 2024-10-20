@@ -1,6 +1,6 @@
 import React from 'react'
 import { Accordion } from '../ui/accordion'
-import Accordian from './Accordian'
+import Accordian from './lib/Accordian'
 
 const Faq = () => {
   return (
