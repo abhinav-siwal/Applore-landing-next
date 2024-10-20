@@ -27,9 +27,9 @@ const Accordian = () => {
         <AccordionItem value="item-1">
           <AccordionTrigger onClick={() => toggleItem("item-1")}>
             <span className="mr-2">
-              <span className="inline-flex items-center justify-center w-5 h-5">
+              <span className="inline-flex  items-center justify-center w-5 h-5">
                 <span className="text-xl">
-                  {openItem === "item-1" ? '−' : '+'} {/* Change sign based on state */}
+                  {openItem === "item-1" ? 'x' : '+'} {/* Change sign based on state */}
                 </span>
               </span>
             </span>
@@ -45,7 +45,7 @@ const Accordian = () => {
             <span className="mr-2">
               <span className="inline-flex items-center justify-center w-5 h-5">
                 <span className="text-xl">
-                  {openItem === "item-2" ? '−' : '+'} {/* Change sign based on state */}
+                  {openItem === "item-2" ? 'x' : '+'} {/* Change sign based on state */}
                 </span>
               </span>
             </span>
@@ -61,7 +61,7 @@ const Accordian = () => {
             <span className="mr-2">
               <span className="inline-flex items-center justify-center w-5 h-5">
                 <span className="text-xl">
-                  {openItem === "item-3" ? '−' : '+'} {/* Change sign based on state */}
+                  {openItem === "item-3" ? 'x' : '+'} {/* Change sign based on state */}
                 </span>
               </span>
             </span>

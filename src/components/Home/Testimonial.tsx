@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import CardSlider from './CardSlider';
 
 const Testimonial = () => {
   return (
@@ -22,7 +23,7 @@ const Testimonial = () => {
             <span className="font-medium libre-baskerville-regular-italic"> Custom Applications</span>
           </h2>
 
-          <button className="mt-8 bg-white font-semibold text-black px-6 py-3 rounded-full flex items-center space-x-2">
+          <button className="mt-8 bg-white font-semibold text-black px-6 py-3 rounded-full flex items-center space-x-2 libre-baskerville-bold">
             <span >Start your project now</span>
             <span className='text-xl'>→</span> {/* Arrow symbol */}
           </button>
@@ -36,6 +37,10 @@ const Testimonial = () => {
         <h1 className="text-4xl font-bold bg-gradient-to-b from-[#1A2224] to-[#1A222480] bg-clip-text text-transparent bricolage-grotesque-bold">
           about our work
         </h1>
+      </div>
+      <div className='flex justify-center mt-12'>
+
+    <CardSlider/>
       </div>
     </div>
   );

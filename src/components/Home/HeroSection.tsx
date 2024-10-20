@@ -38,7 +38,7 @@ const HeroSection = () => {
        </div>
 
         {/* Button */}
-        <button className="mt-8 bg-black text-white px-6 py-3 rounded-full flex items-center space-x-2">
+        <button className="mt-8 bg-black text-white px-6 py-3 rounded-full flex items-center space-x-2 libre-baskerville-bold">
           <span>Get Free Quote</span>
           <span>→</span> {/* Arrow symbol */}
         </button>
