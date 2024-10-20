@@ -20,6 +20,27 @@ const AccordionItem = React.forwardRef<
 ))
 AccordionItem.displayName = "AccordionItem"
 
+// const AccordionTrigger = React.forwardRef<
+//   React.ElementRef<typeof AccordionPrimitive.Trigger>,
+//   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
+// >(({ className, children, ...props }, ref) => (
+//   <AccordionPrimitive.Header className="flex">
+//     <AccordionPrimitive.Trigger
+//       ref={ref}
+//       className={cn(
+//         "flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+//         className
+//       )}
+//       {...props}
+//     >
+//       {children}
+//       <ChevronDownIcon className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
+//     </AccordionPrimitive.Trigger>
+//   </AccordionPrimitive.Header>
+// ))
+// AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
+
+
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
@@ -28,17 +49,18 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+        "flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all ",
         className
       )}
       {...props}
     >
       {children}
-      <ChevronDownIcon className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
+      {/* Move the icons to the right, no need for a separate wrapper */}
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
-))
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
+));
+AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
+
 
 const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,

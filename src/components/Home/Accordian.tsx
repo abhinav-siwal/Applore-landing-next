@@ -26,14 +26,10 @@ const Accordian = () => {
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger onClick={() => toggleItem("item-1")}>
-            <span className="mr-2">
-              <span className="inline-flex  items-center justify-center w-5 h-5">
-                <span className="text-xl">
-                  {openItem === "item-1" ? 'x' : '+'} {/* Change sign based on state */}
-                </span>
-              </span>
-            </span>
             Is it accessible?
+            <span className="ml-auto text-xl">
+              {openItem === "item-1" ? 'x' : '+'} {/* Change sign based on state */}
+            </span>
           </AccordionTrigger>
           <AccordionContent>
             Yes. It adheres to the WAI-ARIA design pattern.
@@ -42,14 +38,10 @@ const Accordian = () => {
 
         <AccordionItem value="item-2">
           <AccordionTrigger onClick={() => toggleItem("item-2")}>
-            <span className="mr-2">
-              <span className="inline-flex items-center justify-center w-5 h-5">
-                <span className="text-xl">
-                  {openItem === "item-2" ? 'x' : '+'} {/* Change sign based on state */}
-                </span>
-              </span>
-            </span>
             Can I customize the styles?
+            <span className="ml-auto text-xl">
+              {openItem === "item-2" ? 'x' : '+'} {/* Change sign based on state */}
+            </span>
           </AccordionTrigger>
           <AccordionContent>
             Yes, you can customize the Accordion using Tailwind CSS or your preferred styling approach.
@@ -58,14 +50,10 @@ const Accordian = () => {
 
         <AccordionItem value="item-3">
           <AccordionTrigger onClick={() => toggleItem("item-3")}>
-            <span className="mr-2">
-              <span className="inline-flex items-center justify-center w-5 h-5">
-                <span className="text-xl">
-                  {openItem === "item-3" ? 'x' : '+'} {/* Change sign based on state */}
-                </span>
-              </span>
-            </span>
             What libraries does it use?
+            <span className="ml-auto text-xl">
+              {openItem === "item-3" ? 'x' : '+'} {/* Change sign based on state */}
+            </span>
           </AccordionTrigger>
           <AccordionContent>
             This Accordion is built using Radix UI for accessibility and flexibility.

@@ -29,12 +29,12 @@ const CardSlider = () => {
         </CarouselContent>
 
         {/* Previous Button */}
-        <CarouselPrevious className="absolute -left-2 top-1/2 transform -translate-y-1/2  bg-white text-black p-2 rounded-full z-10">
+        <CarouselPrevious className="absolute -left-2 top-1/2 transform translate-y-1/2  bg-white text-black p-2 rounded-full z-10">
           ‹
         </CarouselPrevious>
 
         {/* Next Button */}
-        <CarouselNext className="absolute -right-2 top-1/2 transform -translate-y-1/2 bg-white text-black p-2 rounded-full z-10">
+        <CarouselNext className="absolute -right-2 top-1/2 transform translate-y-1/2 bg-white text-black p-2 rounded-full z-10">
           ›
         </CarouselNext>
       </Carousel>

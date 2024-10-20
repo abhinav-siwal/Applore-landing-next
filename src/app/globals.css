@@ -112,3 +112,18 @@
   }
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move by 50% of the container width */
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 20s linear infinite; /* Adjust duration as needed */
+  width: calc(200%); /* Ensure the container is wide enough for both sets of logos */
+}
+
