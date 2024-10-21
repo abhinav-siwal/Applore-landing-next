@@ -41,6 +41,10 @@ const Approach = () => {
     <div className="relative mt-24 w-full">
       {/* Background Image */}
       <div className="relative h-[500px]">
+        
+         {/* Line image */}
+        
+
         <Image
           src="/Home/Approachbg.svg"
           layout="fill"
@@ -60,7 +64,7 @@ const Approach = () => {
           </h3>
 
           {/* Button */}
-          <button className="mt-8 bg-white text-black px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
+          <button className="mt-8 bg-white inter-regular text-black px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
             <span>Get Free Quote</span>
             <Image
               src="/Home/rightArrow.svg"
@@ -112,8 +116,7 @@ const Approach = () => {
           Our Approach
         </h1>
       </div>
-
-      {/* Card Display Code */}
+            {/* Card Display Code */}
       <div className="flex flex-wrap justify-center gap-[1.5rem] relative px-4 md:px-10">
         {" "}
         {/* Added padding on mobile (px-4) */}
@@ -124,6 +127,7 @@ const Approach = () => {
               index % 2 == 1 ? "mt-[5rem]" : ""
             }`}
           >
+
             {/* Large Number Overlay */}
             <div className="absolute left-[-4rem] top-[-7rem] transform text-[16rem] font-semibold text-gray-300 opacity-20">
               {card.id < 10 ? `0${card.id}` : card.id}

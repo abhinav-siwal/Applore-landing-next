@@ -34,21 +34,28 @@ const HeroSection = () => {
           height={50} // Adjust the height as needed
           alt="logo"
         />
-        <span className="text-white font-semibold">APPLORE</span>
+        <span className="text-white font-semibold text-xl">APPLORE</span>
       </div>
 
       {/* Main Content Section */}
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white -mt-28">
-        <div className="max-w-[500px]">
-          <h1 className="text-5xl font-bold bricolage-grotesque-bold">
-            From idea to <span className="text-blue-500">go-live</span> in
-          </h1>
-          <h2 className="text-6xl mt-4 libre-baskerville-regular-italic">
-            60 days
-          </h2>
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white -mt-28 p-4">
+        <div className="max-w-[650px]">
+        <h1
+  className="sm:text-6xl text-5xl font-bold bricolage-grotesque-bold bg-gradient-to-r from-white via-[#FFFFFF99] to-[#FFFFFF] bg-clip-text text-transparent"
+>
+  From idea to <span className="text-[#3A88F6]">go-live</span> in
+</h1>
+<h2
+  className="sm:text-6xl text-5xl mt-4 libre-baskerville-regular-italic  "
+>
+  60 days
+</h2>
+
+
+
 
           {/* Adjusted Paragraph */}
-          <div className="flex flex-col items-center mt-4">
+          <div className="flex flex-col items-center mt-10">
             <p className="text-lg bricolage-grotesque-light text-center">
               We craft powerful digital experiences that captivate customers and
               fuel growth.
@@ -57,7 +64,7 @@ const HeroSection = () => {
         </div>
 
         {/* Button */}
-        <button className="mt-8 bg-black text-white px-6 py-3 rounded-full flex items-center space-x-2 ">
+        <button className="mt-8 bg-black text-white inter-regular px-6 py-3 rounded-full flex items-center space-x-2 ">
           <span>Get Free Quote</span>
           <Image
                 src="/Home/rightArrow.svg"
@@ -68,7 +75,7 @@ const HeroSection = () => {
         </button>
       </div>
 
-      <div className="absolute bottom-44 w-full text-center text-[#8C8C8C] text-lg bricolage-grotesque-light">
+      <div className="absolute sm:bottom-44 bottom-32 w-full text-center text-[#8C8C8C] text-lg bricolage-grotesque-light">
         Trusted By
       </div>
 

@@ -14,7 +14,7 @@ const Testimonial = ({testimonialData}) => {
           alt="UI/UX Design"
           priority
         />
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center gap-3 text-white z-10 ">
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center gap-3 text-white z-10 p-2  ">
           <h1 className="text-4xl font-semibold bricolage-grotesque-medium">
             Bring your 
             <span className="libre-baskerville-regular-italic"> Vision</span>
@@ -25,8 +25,8 @@ const Testimonial = ({testimonialData}) => {
           </h2>
 
             {/* Button */}
-            <button className="mt-8 bg-white text-black px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
-            <span>Start Your Project Now</span>
+            <button className="mt-8 bg-white text-black inter-medium px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
+            <span>Start your project now</span>
             <Image
               src="/Home/rightArrow.svg"
               width={20}

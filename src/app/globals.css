@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -99,6 +100,26 @@
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   font-style: italic;
+}
+
+.inter-light {
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
+}
+
+.inter-regular {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+.inter-semibold {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.inter-bold {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
 }
 
 @layer base {
