@@ -8,6 +8,10 @@ const logos = [
   "/Home/jk.svg",
   "/Home/kohler.svg",
   "/Home/lakme.svg",
+  "/Home/wipro.svg",
+  "/Home/jk.svg",
+  "/Home/kohler.svg",
+  "/Home/lakme.svg",
 ];
 
 const HeroSectionCarousel = () => {

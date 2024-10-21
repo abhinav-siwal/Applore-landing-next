@@ -8,28 +8,31 @@ import {
 import React from "react";
 import TestimonialCard from "./TestimonialCard";
 
-const CardSlider = () => {
-  // Array of 6 items (you can modify this according to your need)
-  const cards = Array.from({ length: 6 });
-
+const CardSlider = ({ testimonialData }) => {
   return (
     <div className="relative w-9/12 overflow-hidden">
       <Carousel className="relative">
         {/* Carousel Items */}
         <CarouselContent className="flex">
-          {/* Loop over cards array and pass the index to TestimonialCard */}
-          {cards.map((_, index) => (
+          {/* Loop over the testimonialData array and render each testimonial */}
+          {testimonialData?.testimonial?.map((testimonial, index) => (
             <CarouselItem
-              key={index}
+              key={testimonial._id} // Use _id as the key
               className="w-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3 p-4"
             >
-              <TestimonialCard  />
+              {/* Pass the relevant testimonial data to the TestimonialCard */}
+              <TestimonialCard
+                name={testimonial.name}
+                description={testimonial.description}
+                media={testimonial.media}
+                mediaType={testimonial.mediaType}
+              />
             </CarouselItem>
           ))}
         </CarouselContent>
 
         {/* Previous Button */}
-        <CarouselPrevious className="absolute -left-2 top-1/2 transform translate-y-1/2  bg-white text-black p-2 rounded-full z-10">
+        <CarouselPrevious className="absolute -left-2 top-1/2 transform translate-y-1/2 bg-white text-black p-2 rounded-full z-10">
           ‹
         </CarouselPrevious>
 

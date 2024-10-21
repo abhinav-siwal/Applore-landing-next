@@ -1,14 +1,17 @@
 import Image from "next/image";
 import React from "react";
 
-const TestimonialCard = () => {
+const TestimonialCard = ({ name, media }) => {
+  // Split the name and company
+  const [testimonialName, company] = name.split(', ');
+
   return (
-    <div className=" max-w-[350px] h-[450px] rounded-lg shadow-md">
+    <div className="max-w-[350px] h-[450px] rounded-lg shadow-md">
       {/* Video Frame */}
-      <div className="h-[250px]  p-2">
+      <div className="h-[250px] p-2">
         <iframe
           className="w-full h-full"
-          src="https://www.youtube.com/embed/your-video-id"
+          src={media} // Use the media prop for the video link
           title="Product Video"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -18,8 +21,8 @@ const TestimonialCard = () => {
 
       {/* Product Owner Details */}
       <div className="p-4 text-center">
-        <h2 className="text-xl font-bold">John Doe</h2>
-        <p className="text-gray-500 ">Product Owner, Buddy App</p>
+        <h2 className="text-xl font-bold">{testimonialName}</h2>
+        <p className="text-gray-500">{`Product Owner,${company}`}</p> {/* Update to show CEO and company */}
 
         {/* App Logo */}
         <div className="mt-4">

@@ -33,9 +33,16 @@ const Footer = () => {
               <span className="libre-baskerville-regular-italic">projects.</span>
             </div>
           </h1>
-          <button className="mt-8 bg-white text-black px-6 py-3 rounded-full flex items-center space-x-2 libre-baskerville-light">
-            <span className="font-semibold">Get Free Quote</span>
-            <span className="text-xl">→</span>
+            {/* Button */}
+            <button className="mt-8 bg-white text-black px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
+            <span>Get Free Quote</span>
+            <Image
+              src="/Home/rightArrow.svg"
+              width={20}
+              height={20}
+              alt="Arrow"
+              className="absolute filter invert right-4"
+            />
           </button>
           <p className="mt-10 bricolage-grotesque-medium">
             Our Clients are backed by top Investors

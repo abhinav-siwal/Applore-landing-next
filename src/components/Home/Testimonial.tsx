@@ -2,7 +2,8 @@ import Image from 'next/image';
 import React from 'react';
 import CardSlider from './lib/CardSlider';
 
-const Testimonial = () => {
+
+const Testimonial = ({testimonialData}) => {
   return (
     <div>
       <div className='relative h-[500px] mt-24'>
@@ -23,9 +24,16 @@ const Testimonial = () => {
             <span className="font-medium libre-baskerville-regular-italic"> Custom Applications</span>
           </h2>
 
-          <button className="mt-8 bg-white font-semibold text-black px-6 py-3 rounded-full flex items-center space-x-2 libre-baskerville-bold">
-            <span >Start your project now</span>
-            <span className='text-xl'>→</span> {/* Arrow symbol */}
+            {/* Button */}
+            <button className="mt-8 bg-white text-black px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
+            <span>Start Your Project Now</span>
+            <Image
+              src="/Home/rightArrow.svg"
+              width={20}
+              height={20}
+              alt="Arrow"
+              className="absolute filter invert right-4"
+            />
           </button>
         </div>
       </div>
@@ -40,7 +48,7 @@ const Testimonial = () => {
       </div>
       <div className='flex justify-center mt-12'>
 
-    <CardSlider/>
+    <CardSlider testimonialData={testimonialData}/>
       </div>
     </div>
   );
