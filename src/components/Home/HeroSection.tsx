@@ -4,9 +4,24 @@ import HeroSectionCarousel from './lib/HeroSectionCarousel';
 
 const HeroSection = () => {
   return (
-    <div className="relative w-full h-[45rem] bg-[#12191B]">
-      {/* Radial Gradient Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#5E6EF9,_#10A4F2,_#12191B)]"></div>
+    <div className="relative w-full h-[45rem] bg-[#12191B] overflow-hidden">
+      {/* First Gradient (Top Left) */}
+      {/* <div className='absolute -top-20 -left-20 rounded-full h-[320px] w-[350px] bg-gradient-to-r from-[#10A4F2] to-[#5E6EF9] filter blur-3xl'></div> */}
+      <div className='absolute -top-20 -left-20 rounded-full h-[320px] w-[350px] filter blur-[100px]' 
+     style={{ background: 'radial-gradient(circle, #10A4F2, #5E6EF9)' }}>
+</div>
+
+      {/* Second Gradient (Bottom Right) */}
+      {/* <div className='absolute -bottom-72 -right-80 h-[675px] w-[725px] rounded-full bg-gradient-to-r from-[#10A4F2] to-[#5E6EF9] filter blur-3xl'></div> */}
+      <div className='absolute -bottom-72 -right-80 h-[675px] w-[725px] rounded-full filter blur-[150px]'
+     style={{ background: 'radial-gradient(circle, #10A4F2, #5E6EF9)' }}>
+</div>
+
+      {/* Third Gradient (Bottom Left) */}
+      {/* <div className='absolute bottom-0 left-0 h-[150px] w-[400px] rounded-lg bg-gradient-to-r from-[#10A4F2] to-[#5E6EF9] filter blur-3xl'></div> */}
+      <div className='absolute bottom-0 left-0 h-[150px] w-[400px] rounded-lg filter blur-[100px]'
+     style={{ background: 'radial-gradient(circle, #10A4F2, #5E6EF9)' }}>
+</div>
 
       {/* Logo and Text */}
       <div className="absolute top-10 left-1/2 transform -translate-x-1/2 flex items-center space-x-2">
@@ -42,7 +57,7 @@ const HeroSection = () => {
         </button>
       </div>
 
-      <div className="absolute bottom-44 w-full text-center text-gray-500 text-lg bricolage-grotesque-light">
+      <div className="absolute bottom-44 w-full text-center text-[#8C8C8C] text-lg bricolage-grotesque-light">
         Trusted By
       </div>
 

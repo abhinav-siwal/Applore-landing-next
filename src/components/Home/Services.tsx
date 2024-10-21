@@ -44,11 +44,11 @@ const Services: React.FC = () => {
           {/* 1st card  */}
           <div>
   <Image
-    src="/Home/PhoneImage.png"
+    src="/Home/Phone.svg"
     alt="Design"
     width={100}
     height={100}
-    className="w-[560px] h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
+    className="sm:w-[560px] w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
   />
   <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">iOS App Development</h2>
   <p className='opacity-80'>We create high-performance iOS apps that offer exceptional user experiences, tailored to your business needs. </p>
@@ -56,11 +56,11 @@ const Services: React.FC = () => {
 {/* 2nd */}
 <div>
   <Image
-    src="/Home/AppDev.png"
+    src="/Home/Android.svg"
     alt="Design"
     width={100}
     height={100}
-    className="w-[560px] h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
+    className="sm:w-[560px] w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
   />
   <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">Android App Development</h2>
   <p className='opacity-80'>Our team builds engaging Android applications that stand out on the Google Play Store and drive user retention. </p>
@@ -68,11 +68,11 @@ const Services: React.FC = () => {
 {/* 3rd */}
 <div>
   <Image
-    src="/Home/CrossPlatform.png"
+    src="/Home/CrossPlatform.svg"
     alt="Design"
     width={100}
     height={100}
-    className="w-[560px] h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
+    className="sm:w-[560px] w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
   />
   <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">Cross Platform Development</h2>
   <p className='opacity-80'>We provide efficient cross-platform solutions that deliver a consistent experience across devices while minimizing costs. </p>
@@ -80,11 +80,11 @@ const Services: React.FC = () => {
 {/* 4rth */}
 <div>
   <Image
-    src="/Home/UIDesign.png"
+    src="/Home/UIDesign.svg"
     alt="Design"
     width={100}
     height={100}
-    className="w-[560px] h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
+    className="sm:w-[560px] w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
   />
   <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">Mobile UX/UI design</h2>
   <p className='opacity-80'>A multi-page website with CMS support, thoughtful UI system and effective code </p>

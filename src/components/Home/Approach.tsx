@@ -29,35 +29,38 @@ const Approach = () => {
             <span>→</span> {/* Arrow symbol */}
           </button>
 
-          <div className="mt-10 flex space-x-6 text-white">
-            <div className="flex items-center">
-              <Image src="Home/check.svg" alt="Check Icon" width={20} height={20} className="mr-2" />
-              <span>Customer solution</span>
-            </div>
-            <div className="flex items-center">
-              <Image src="Home/check.svg" alt="Check Icon" width={20} height={20} className="mr-2" />
-              <span>Expert support</span>
-            </div>
-            <div className="flex items-center">
-              <Image src="Home/check.svg" alt="Check Icon" width={20} height={20} className="mr-2" />
-              <span>Proven result</span>
-            </div>
-          </div>
+          <div className="mt-10 flex flex-col sm:flex-row sm:space-x-6 text-white">
+  <div className="flex items-start mb-4 sm:mb-0">
+    <Image src="Home/check.svg" alt="Check Icon" width={20} height={20} className="mr-2" />
+    <span>Customer solution</span>
+  </div>
+  <div className="flex items-start mb-4 sm:mb-0">
+    <Image src="Home/check.svg" alt="Check Icon" width={20} height={20} className="mr-2" />
+    <span>Expert support</span>
+  </div>
+  <div className="flex items-start mb-4 sm:mb-0">
+    <Image src="Home/check.svg" alt="Check Icon" width={20} height={20} className="mr-2" />
+    <span>Proven result</span>
+  </div>
+</div>
+
+
+
         </div>
       </div>
 
       {/* Title Image Above Cards */}
-      <div className="flex justify-center my-10">
+      <div className="flex justify-center my-10 ">
        <h1 className='text-4xl bricolage-grotesque-bold bg-gradient-to-b from-[#1A2224] to-[#1A222480] bg-clip-text text-transparent'>Our Approach</h1>
       </div>
 
       {/* Card Display Code */}
-      <div className="flex flex-wrap justify-center gap-[1.5rem] relative">
+      <div className="flex flex-wrap justify-center gap-[1.5rem] relative px-4 md:px-10"> {/* Added padding on mobile (px-4) */}
         {cards.map((card, index) => (
           <div
             key={card.id}
-            className={`relative w-[20rem] h-[27rem] p-[1rem] shadow-lg flex flex-col justify-between rounded-lg border border-gray-200 overflow-hidden ${
-              index === 1 || index === 3 ? "mt-[5rem]" : ""
+            className={`relative w-full sm:w-[20rem] h-[27rem] p-[1rem] shadow-lg flex flex-col justify-between rounded-lg border border-gray-200 overflow-hidden ${
+              index%2==1 ? "mt-[5rem]" : ""
             }`}
           >
             {/* Large Number Overlay */}

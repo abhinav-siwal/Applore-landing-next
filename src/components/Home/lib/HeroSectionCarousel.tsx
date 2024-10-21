@@ -6,12 +6,8 @@ import Image from 'next/image'; // Import the Image component
 const logos = [
   "/Home/wipro.svg",
   "/Home/jk.svg",
-  "/Home/wipro.svg",
-  "/Home/jk.svg",
-  "/Home/wipro.svg",
-  "/Home/jk.svg",
-  "/Home/wipro.svg",
-  "/Home/jk.svg"
+  "/Home/kohler.svg",
+  "/Home/lakme.svg",
 ];
 
 const HeroSectionCarousel = () => {
