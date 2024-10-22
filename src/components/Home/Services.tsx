@@ -1,7 +1,16 @@
+"use client";
 import Image from 'next/image';
 import React from 'react';
-
+import { usePathname } from 'next/navigation';
+import { content } from '/data/content.js';
 const Services: React.FC = () => {
+
+  const pathname = usePathname(); // Get router instance
+  const currentPath = pathname; // Get the current route
+  console.log("currentPath", currentPath);
+  // Fetch the content based on the current route
+  const currentContent = content[currentPath]?.heroSection || {};
+
   return (
     <div className="mt-10 w-full mx-auto max-w-[1200px] px-[1rem]">
       {/* Idea section */}
@@ -17,7 +26,7 @@ const Services: React.FC = () => {
       </div>
 
       {/* Services stats */}
-      <div className="grid grid-cols-2 gap-y-[4rem] gap-x-[2rem]">
+      <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-y-[4rem] gap-x-[2rem]">
   <div>
     <h2 className="sm:text-4xl text-2xl font-bold">500+</h2>
     <p className="mt-[0.5rem] text-gray-500">Applications Developed</p>
@@ -44,26 +53,26 @@ const Services: React.FC = () => {
           {/* 1st card  */}
           <div>
   <Image
-    src="/Home/Phone.svg"
+    src="/Home/AndIos.jpeg"
     alt="Design"
-    width={100}
-    height={100}
-    className="sm:w-[560px] w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
+    width={400}
+    height={400}
+    className=" w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
   />
-  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">iOS App Development</h2>
-  <p className='opacity-80'>We create high-performance iOS apps that offer exceptional user experiences, tailored to your business needs. </p>
+  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">iOS and Android App Development</h2>
+  <p className='opacity-80'>We build high-performance iOS and Android apps, delivering exceptional user experiences and helping your business stand out on both the App Store and Google Play. </p>
 </div>
 {/* 2nd */}
 <div>
   <Image
-    src="/Home/Android.svg"
+    src="/Home/Aiml.jpeg"
     alt="Design"
-    width={100}
-    height={100}
-    className="sm:w-[560px] w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
+    width={400}
+    height={400}
+    className=" w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
   />
-  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">Android App Development</h2>
-  <p className='opacity-80'>Our team builds engaging Android applications that stand out on the Google Play Store and drive user retention. </p>
+  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">AI/ML and Blockchain Development</h2>
+  <p className='opacity-80'>We deliver AI, Machine Learning, and Blockchain services that enhance efficiency and enable data-driven decisions through intelligent automation and secure applications.  </p>
 </div>
 {/* 3rd */}
 <div>
@@ -72,7 +81,7 @@ const Services: React.FC = () => {
     alt="Design"
     width={100}
     height={100}
-    className="sm:w-[560px] w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
+    className=" w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
   />
   <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">Cross Platform Development</h2>
   <p className='opacity-80'>We provide efficient cross-platform solutions that deliver a consistent experience across devices while minimizing costs. </p>
@@ -84,7 +93,7 @@ const Services: React.FC = () => {
     alt="Design"
     width={100}
     height={100}
-    className="sm:w-[560px] w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
+    className=" w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
   />
   <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">Mobile UX/UI design</h2>
   <p className='opacity-80'>A multi-page website with CMS support, thoughtful UI system and effective code </p>

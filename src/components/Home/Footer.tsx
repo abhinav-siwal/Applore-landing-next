@@ -33,7 +33,7 @@ const Footer = () => {
             </div>
           </h1>
            {/* Button */}
-           <button className="mt-8 bg-white inter-regular text-black px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
+           <button className="mt-8 bg-white inter-semibold text-black px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
             <span>Get Free Quote</span>
             <Image
               src="/Home/rightArrow.svg"

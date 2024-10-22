@@ -1,9 +1,11 @@
+'use client'
 import Image from 'next/image';
 import React from 'react';
-
+import { useRouter } from 'next/navigation'
 const Page = () => {
+  const router = useRouter()
   return (
-    <div className='max-w-[375px] h-[700px] bg-gradient-to-b from-blue-400 to-blue-500 mt-12 ml-12 relative flex flex-col items-center justify-center text-white p-10'>
+    <div className='w-full h-screen bg-gradient-to-b from-blue-400 to-blue-500 mx-auto relative flex flex-col items-center justify-center text-white p-10 md:p-16 lg:p-20'> {/* Removed mt-12 */}
       <svg
         width="32"
         height="32"
@@ -11,6 +13,7 @@ const Page = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="absolute top-5 right-5"
+        onClick={() => router.push('/')}
       >
         <g id="fi_1617543" clipPath="url(#clip0_1100_2117)">
           <path

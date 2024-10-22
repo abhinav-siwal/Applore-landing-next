@@ -1,7 +1,18 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import GetQuoteForm from "./GetQuoteForm";
 
 const Approach = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const openModal = () => {
+    setIsModalOpen(true); // Open modal on button click
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close modal on close icon click
+  };
+
   const cards = [
     {
       id: 1,
@@ -64,7 +75,7 @@ const Approach = () => {
           </h3>
 
           {/* Button */}
-          <button className="mt-8 bg-white inter-regular text-black px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
+          <button onClick={openModal} className="mt-8 bg-white inter-semibold text-black px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
             <span>Get Free Quote</span>
             <Image
               src="/Home/rightArrow.svg"
@@ -163,6 +174,14 @@ const Approach = () => {
           </div>
         ))}
       </div>
+       {/* Modal Component */}
+       {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="relative bg-[#12191B] rounded-lg p-6 w-full max-w-[1100px]">
+            <GetQuoteForm closeModal={closeModal} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

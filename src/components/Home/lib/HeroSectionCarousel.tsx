@@ -3,21 +3,10 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image'; // Import the Image component
 
-const logos = [
-  "/Home/wipro.svg",
-  "/Home/jk.svg",
-  "/Home/kohler.svg",
-  "/Home/lakme.svg",
-  "/Home/wipro.svg",
-  "/Home/jk.svg",
-  "/Home/kohler.svg",
-  "/Home/lakme.svg",
-];
-
-const HeroSectionCarousel = () => {
-  const [visibleLogos, setVisibleLogos] = useState([...logos, ...logos]); // Duplicate logos
-
- 
+const HeroSectionCarousel = ({ workedWithData }) => {
+  // Extract only the 'icon' from each item in workedWithData.workedWith
+  const logos = workedWithData?.workedWith?.map(item => item.icon) || [];
+  const [visibleLogos, setVisibleLogos] = useState([...logos, ...logos,...logos]); // Duplicate logos for smooth carousel effect
 
   return (
     <div className="overflow-hidden w-full">

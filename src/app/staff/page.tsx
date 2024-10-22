@@ -41,12 +41,7 @@ async function fetchWorkedWith() {
   }
 }
 
-
-
-
-
-
-export default async function Home() {
+export default async function Staff() {
   // Fetch FAQ, Testimonial, and Worked With data
   const faqData = await fetchFAQ();
   const testimonialData = await fetchTestimonials();
@@ -55,7 +50,7 @@ export default async function Home() {
   return (
     <>
       {/* Pass the workedWithData to the HeroSection component */}
-      <HeroSection workedWithData={workedWithData}   />
+      <HeroSection workedWithData={workedWithData} />
       <Services />
       <Approach />
       {/* Pass the fetched testimonial data to the Testimonial component */}
