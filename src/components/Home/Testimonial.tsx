@@ -1,9 +1,16 @@
+"use client";
 import Image from 'next/image';
 import React from 'react';
 import CardSlider from './lib/CardSlider';
-
+import { usePathname } from 'next/navigation';
+import { content } from '/data/content.js';
 
 const Testimonial = ({testimonialData}) => {
+  const pathname = usePathname(); // Get router instance
+  const currentPath = pathname; // Get the current route
+  console.log("currentPath", currentPath);
+  // Fetch the content based on the current route
+  const currentContent = content[currentPath]?.testimonialSection || {};
   return (
     <div>
       <div className='relative h-[500px] mt-24'>
@@ -16,17 +23,21 @@ const Testimonial = ({testimonialData}) => {
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center gap-3 text-white z-10 p-2  ">
           <h1 className="text-4xl font-semibold bricolage-grotesque-medium">
-            Bring your 
-            <span className="libre-baskerville-regular-italic"> Vision</span>
+            {currentContent.heading1} 
+            <span className="libre-baskerville-regular-italic">{currentContent.highlight1}</span>
+          </h1>
+          <h1 className="text-4xl font-semibold bricolage-grotesque-medium">
+            {currentContent.staffHeading} 
+            <span className="libre-baskerville-regular-italic">{currentContent.staffHighlight}</span>
           </h1>
           <h2 className="text-4xl bricolage-grotesque-medium">
-            to Life with 
-            <span className="font-medium libre-baskerville-regular-italic"> Custom Applications</span>
+          {currentContent.heading2} 
+            <span className="font-medium libre-baskerville-regular-italic">{currentContent.highlight2}</span>
           </h2>
 
             {/* Button */}
             <button className="mt-8 bg-white text-black inter-medium px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
-            <span>Start your project now</span>
+            <span>{currentContent.buttonText}</span>
             <Image
               src="/Home/rightArrow.svg"
               width={20}

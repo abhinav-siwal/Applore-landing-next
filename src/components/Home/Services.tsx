@@ -9,94 +9,92 @@ const Services: React.FC = () => {
   const currentPath = pathname; // Get the current route
   console.log("currentPath", currentPath);
   // Fetch the content based on the current route
-  const currentContent = content[currentPath]?.heroSection || {};
+  const currentContent = content[currentPath]?.serviceSection || {};
 
   return (
     <div className="mt-10 w-full mx-auto max-w-[1200px] px-[1rem]">
       {/* Idea section */}
       <div className="mb-[2rem]">
         <h1 className="text-3xl font-bold bricolage-grotesque-bold">
-          Shaping ideas into <span className="italic libre-baskerville-regular-italic">results</span>
+          {currentContent.title} <span className="italic libre-baskerville-regular-italic">{currentContent.highlight}</span>
         </h1>
         <p className="mt-[1rem] text-gray-800">
-          At Applore, we transform your concepts into impactful solutions that drive success.
-          Let us help you navigate the path from vision to reality with our expertise and
-          innovative approach.
+         {currentContent.description}
         </p>
       </div>
 
       {/* Services stats */}
       <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-y-[4rem] gap-x-[2rem]">
   <div>
-    <h2 className="sm:text-4xl text-2xl font-bold">500+</h2>
-    <p className="mt-[0.5rem] text-gray-500">Applications Developed</p>
+    <h2 className="sm:text-4xl text-2xl font-bold">{currentContent.statsNum1}</h2>
+    <p className="mt-[0.5rem] text-gray-500">{currentContent.statsText1}</p>
   </div>
   <div>
-    <h2 className="sm:text-4xl text-2xl font-bold">750+</h2>
-    <p className="mt-[0.5rem] text-gray-500">Live Websites Developed</p>
+    <h2 className="sm:text-4xl text-2xl font-bold">{currentContent.statsNum2}</h2>
+    <p className="mt-[0.5rem] text-gray-500">{currentContent.statsText2}</p>
   </div>
   <div>
-    <h2 className="sm:text-4xl text-2xl font-bold">200,000+</h2>
-    <p className="mt-[0.5rem] text-gray-500">Users Downloaded</p>
+    <h2 className="sm:text-4xl text-2xl font-bold">{currentContent.statsNum3}</h2>
+    <p className="mt-[0.5rem] text-gray-500">{currentContent.statsText3}</p>
   </div>
   <div>
-    <h2 className="sm:text-4xl text-2xl font-bold">400+</h2>
-    <p className="mt-[0.5rem] text-gray-500">Clients</p>
+    <h2 className="sm:text-4xl text-2xl font-bold">{currentContent.statsNum4}</h2>
+    <p className="mt-[0.5rem] text-gray-500">{currentContent.statsText4}</p>
   </div>
 </div>
 
 
       {/* Cards */}
       <div className='mt-20'>
-        <h1 className='text-3xl  bricolage-grotesque-bold'>Key services</h1>
+        <h1 className='text-3xl  bricolage-grotesque-bold'>{currentContent.keyService}</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
           {/* 1st card  */}
           <div>
   <Image
-    src="/Home/AndIos.jpeg"
+    src={currentContent.image1}
     alt="Design"
     width={400}
     height={400}
     className=" w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
   />
-  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">iOS and Android App Development</h2>
-  <p className='opacity-80'>We build high-performance iOS and Android apps, delivering exceptional user experiences and helping your business stand out on both the App Store and Google Play. </p>
+  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">{currentContent.keyService1}</h2>
+  <p className='opacity-80'>{currentContent.desc1}</p>
 </div>
 {/* 2nd */}
 <div>
   <Image
-    src="/Home/Aiml.jpeg"
+    src={currentContent.image2}
     alt="Design"
     width={400}
     height={400}
     className=" w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
   />
-  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">AI/ML and Blockchain Development</h2>
-  <p className='opacity-80'>We deliver AI, Machine Learning, and Blockchain services that enhance efficiency and enable data-driven decisions through intelligent automation and secure applications.  </p>
+  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">{currentContent.keyService2}</h2>
+  <p className='opacity-80'>{currentContent.desc2}</p>
 </div>
 {/* 3rd */}
 <div>
   <Image
-    src="/Home/CrossPlatform.svg"
+    src={currentContent.image3}
     alt="Design"
-    width={100}
-    height={100}
+    width={400}
+    height={400}
     className=" w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
   />
-  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">Cross Platform Development</h2>
-  <p className='opacity-80'>We provide efficient cross-platform solutions that deliver a consistent experience across devices while minimizing costs. </p>
+  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">{currentContent.keyService3}</h2>
+  <p className='opacity-80'>{currentContent.desc3} </p>
 </div>
 {/* 4rth */}
 <div>
   <Image
-    src="/Home/UIDesign.svg"
+    src={currentContent.image4}
     alt="Design"
-    width={100}
-    height={100}
+    width={400}
+    height={400}
     className=" w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
   />
-  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">Mobile UX/UI design</h2>
-  <p className='opacity-80'>A multi-page website with CMS support, thoughtful UI system and effective code </p>
+  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">{currentContent.keyService4}</h2>
+  <p className='opacity-80'>{currentContent.desc4} </p>
 </div>
 
 

@@ -1,5 +1,8 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+import { usePathname } from 'next/navigation';
+import { content } from '/data/content.js'; 
 import {
   FaFacebookF,
   FaTwitter,
@@ -7,6 +10,12 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 const Footer = () => {
+  const pathname = usePathname(); // Get router instance
+  const currentPath = pathname; // Get the current route
+  console.log("currentPath", currentPath);
+  // Fetch the content based on the current route
+  const currentContent = content[currentPath]?.footer || {}; // Default to an empty object if not found
+
   return (
     <div className="mt-24">
       {/* Background Image Section */}
@@ -20,21 +29,21 @@ const Footer = () => {
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center gap-3 text-white z-10">
           <h1 className="text-4xl">
-            <span className="libre-baskerville-regular-italic">Experience </span>
-            <span className="normal-case bricolage-grotesque-medium">
-              the difference
+            <span className="libre-baskerville-regular-italic text-5xl">{currentContent.highlight1}</span>
+            <span className="normal-case bricolage-grotesque-medium text-5xl">
+           {" "}   {currentContent.title1}
             </span>{" "}
             <br />
-            <div className="text-3xl">
-              <span className="bricolage-grotesque-medium">
-                Applore brings to your
+            <div className="text-3xl mt-4">
+              <span className="bricolage-grotesque-medium text-4xl">
+              {currentContent.title2}
               </span>{" "}
-              <span className="libre-baskerville-regular-italic">projects.</span>
+              <span className="libre-baskerville-regular-italic">{currentContent.highlight2}</span>
             </div>
           </h1>
            {/* Button */}
            <button className="mt-8 bg-white inter-semibold text-black px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
-            <span>Get Free Quote</span>
+            <span>{currentContent.buttonText}</span>
             <Image
               src="/Home/rightArrow.svg"
               width={20}

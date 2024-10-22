@@ -2,8 +2,14 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import GetQuoteForm from "./GetQuoteForm";
-
+import { usePathname } from 'next/navigation';
+import { content } from '/data/content.js';
 const Approach = () => {
+  const pathname = usePathname(); // Get router instance
+  const currentPath = pathname; // Get the current route
+  console.log("currentPath", currentPath);
+  // Fetch the content based on the current route
+  const currentContent = content[currentPath]?.ApproachSection || {};
   const [isModalOpen, setIsModalOpen] = useState(false); 
   const openModal = () => {
     setIsModalOpen(true); // Open modal on button click
@@ -16,37 +22,35 @@ const Approach = () => {
   const cards = [
     {
       id: 1,
-      title: "Discovery",
-      content:
-        "We understand your business goals and target audience to determine the best approach for your mobile app.",
+      title: currentContent.title1,
+      content:currentContent.content1,
       icon: "/Home/discoveryIcon.svg",
       image: "/Home/discoveryImage.svg",
     },
     {
       id: 2,
-      title: "Design:",
-      content:
-        "Our team of expert designers will create a visually appealing and user-friendly app design that aligns with your brand.",
+      title: currentContent.title2,
+      content:currentContent.content2,
       icon: "/Home/designIcon.svg",
       image: "/Home/designImage.svg",
     },
     {
       id: 3,
-      title: "Development:",
-      content:
-        "Using the most recent technologies, our experts will create your mobile app, guaranteeing a top-notch and flawless user experience.",
+      title: currentContent.title3,
+      content:currentContent.content3,
       icon: "/Home/developmentIcon.svg",
       image: "/Home/developementImage.svg",
     },
     {
       id: 4,
-      title: "Deployment:",
-      content:
-        "Applore will work with you to launch your application, providing ongoing support and maintenance to ensure its success.",
+      title: currentContent.title4,
+      content:currentContent.content4,
       icon: "/Home/deploymentIcon.svg",
       image: "/Home/deploymentImage.svg",
     },
   ];
+
+
 
   return (
     <div className="relative mt-24 w-full">
@@ -64,19 +68,19 @@ const Approach = () => {
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center gap-3 text-white z-10">
           <h1 className="text-4xl font-semibold bricolage-grotesque-medium">
-            Embrace
+            {currentContent.Embrace}
           </h1>
           <h2 className="text-2xl libre-baskerville-regular-italic">
-            Innovation:
+            {currentContent.mainTitle}
           </h2>
           <h3 className="text-3xl font-semibold bricolage-grotesque-medium">
-            Beyond{" "}
-            <span className="libre-baskerville-regular-italic">Basic</span>
+            {currentContent.Beyond}{" "}
+            <span className="libre-baskerville-regular-italic">{currentContent.Basic}</span>
           </h3>
 
           {/* Button */}
           <button onClick={openModal} className="mt-8 bg-white inter-semibold text-black px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
-            <span>Get Free Quote</span>
+            <span>{currentContent.buttonText}</span>
             <Image
               src="/Home/rightArrow.svg"
               width={20}
@@ -95,7 +99,7 @@ const Approach = () => {
                 height={20}
                 className="mr-2"
               />
-              <span>Customer solution</span>
+              <span>{currentContent.bulltetPoints1}</span>
             </div>
             <div className="flex items-start mb-4 sm:mb-0">
               <Image
@@ -105,7 +109,7 @@ const Approach = () => {
                 height={20}
                 className="mr-2"
               />
-              <span>Expert support</span>
+              <span>{currentContent.bulltetPoints2}</span>
             </div>
             <div className="flex items-start mb-4 sm:mb-0">
               <Image
@@ -115,7 +119,7 @@ const Approach = () => {
                 height={20}
                 className="mr-2"
               />
-              <span>Proven result</span>
+              <span>{currentContent.bulltetPoints3}</span>
             </div>
           </div>
         </div>
