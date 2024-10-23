@@ -158,74 +158,71 @@ body {
   animation: none; /* Pause the animation */
 }
 
-
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 90deg;
-  inherits: true;
+.animated-border-box, .animated-border-box-glow{
+  /* position: absolute; */
+  overflow: hidden; 
+  z-index: 0;
+  /* Border Radius */
+	border-radius: 9999px;
 }
 
-@property --gradX {
-  syntax: '<percentage>';
-  initial-value: 50%;
-  inherits: true;
+.animated-border-box-glow{
+  overflow: hidden;
+  /* Glow Blur */
+  filter: blur(50px);
 }
 
-@property --gradY {
-  syntax: '<percentage>';
-  initial-value: 0%;
-  inherits: true;
+.animated-border-box:before, .animated-border-box-glow:before {
+  content: '';
+  z-index: -2;
+  /* text-align: center; */
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(0deg);
+  position: absolute;
+	width: 99999px;
+	height: 99999px;
+	background-repeat: no-repeat;
+	/* background-position: 0 0; */
+  /*border color, change middle color*/
+	background-image: conic-gradient(rgba(0,0,0,0), #eef5ff, rgba(0,0,0,0) 25%);
+  /* change speed here */
+	animation: rotate 4s linear infinite;
 }
 
-:root {
-  --d: 5000ms;
-  --angle: 90deg;
-  --gradX: 100%;
-  --gradY: 50%;
-  --c1: rgba(168, 239, 255, 1);
-  --c2: rgba(168, 239, 255, 0.1);
+.animated-border-box:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+  /* border width */
+	left: 2px;
+	top: 2px;
+  /* double the px from the border width left */
+	width: calc(100% - 4px);
+	height: calc(100% - 4px);
+  /*bg color*/
+	background: #292a2e;
+  /*box border radius*/
+	border-radius: 9999px;
 }
 
-.box {
-  font-size: 1vw;
-  margin: max(1rem, 3vw);
-  border: 2px solid;
-  padding: 1.5rem;
-  text-align: center; /* Centers text inside the button */
-  border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
-  animation: borderRotate var(--d) linear infinite forwards;
+@keyframes rotate {
+	100% {
+		transform: translate(-50%, -50%) rotate(1turn);
+	}
 }
 
-.box:nth-child(2) {
-  border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 50%) 30;
-  animation: borderRadial var(--d) linear infinite forwards;
+.center-box{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1D1E22;
 }
 
-@keyframes borderRotate {
-  100% {
-    --angle: 420deg;
-  }
-}
 
-@keyframes borderRadial {
-  20% {
-    --gradX: 100%;
-    --gradY: 50%;
-  }
-  40% {
-    --gradX: 100%;
-    --gradY: 100%;
-  }
-  60% {
-    --gradX: 50%;
-    --gradY: 100%;
-  }
-  80% {
-    --gradX: 0%;
-    --gradY: 50%;
-  }
-  100% {
-    --gradX: 50%;
-    --gradY: 0%;
-  }
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }

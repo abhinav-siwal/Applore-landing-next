@@ -12,7 +12,7 @@ const Services: React.FC = () => {
   const currentContent = content[currentPath]?.serviceSection || {};
 
   return (
-    <div className="mt-10 w-full mx-auto max-w-[1200px] px-[1rem]">
+    <div className="mt-10 mx-auto w-10/12 ">
       {/* Idea section */}
       <div className="mb-[2rem]">
         <h1 className="text-3xl font-bold bricolage-grotesque-bold">

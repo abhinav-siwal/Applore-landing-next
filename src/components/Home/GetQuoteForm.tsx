@@ -1,18 +1,95 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import axios from 'axios';
+import { useState,useMemo } from "react";
 import { useRouter } from 'next/navigation'
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import Select from 'react-select';
+import countryList from 'react-select-country-list';
+import PhoneInput from 'react-phone-input-2';
 const GetQuoteForm = ({ closeModal }) => {
+  const options = useMemo(() => countryList().getData(), []);
+  
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  
+  // Validation schema using Yup
+  const validationSchema = Yup.object({
+    name: Yup.string()
+    .strict(true)
+    .required('Name is required'),
+    company: Yup.string().required('Company is required'),
+    email: Yup.string()
+    .strict(true)
+    .required('Email is required')
+    .test('is-email', 'Invalid email format', value => emailRegex.test(value)),
+    // code:Yup.string().required('Code is required'),
+    phone: Yup.string()
+    .required('Phone is required')
+    .test('is-number', 'Phone must be a number', value => /^\d+$/.test(value)),
+    countryCode: Yup.string().required('Country is required'),
+    brief: Yup.string().required('Brief description is required'),
+  });
+  
+  const handleCountryChange = (selectedOption) => {
+    formik.setFieldValue('countryCode', selectedOption.value);  // Set the country code
+  };
+  
+  // Formik setup
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      name: "",
+      countryCode: "",
+      phone: "",
+      interestedIn: "xyz",
+      formType: "ENQUIRY",
+      contactNumber: "7655675675",
+      organisationSize: 0,
+    },
+  
+    validationSchema,
+    onSubmit: async (values) => {
+      console.log(values);
+      // alert(JSON.stringify(values, null, 2));
+      
+      // Create a customized payload from form val
+      const payload = {
+        email: values.email,
+        name: values.name,
+        countryCode: values.countryCode, // Include country code if available
+        phone: values.phone,
+        interestedIn: values.interestedIn,
+        formType: values.formType,
+        contactNumber: values.contactNumber,
+        organisationSize: values.organisationSize,
+      };
+    
+      try {
+        const response = await axios.post('https://api.applore.in/api/user/addMessage', payload);
+        console.log('Response:', response.data);
+        router.push('/thank'); // Redirect on form submission
+    
+        // Handle success (e.g., show a success message, redirect, etc.)
+      } catch (error) {
+        console.error('Error sending message:', error.response ? error.response.data : error.message);
+        // Handle error (e.g., show an error message to the user)
+      }
+      
+      handleSubmit(values); // Call the original handleSubmit function if needed
+    },
+    
+  });
+
+  const handleSubmit = async (values) => {
+      console.log('Form values:', values);  
+  }
+
+
+
     const router = useRouter()
  
-  const [formData, setFormData] = useState({
-    name: "",
-    company: "",
-    email: "",
-    phone: "",
-    country: "",
-    brief: "",
-  });
+  
 
   const countriesAndCities = [
     { value: "USA", label: "USA" },
@@ -20,14 +97,9 @@ const GetQuoteForm = ({ closeModal }) => {
     // Add more countries and cities as needed
   ];
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-  };
+
+
 
   return (
     <div className="fixed inset-0 flex justify-center items-center text-white  z-50">
@@ -83,44 +155,57 @@ const GetQuoteForm = ({ closeModal }) => {
 
         <p className="mb-6 text-sm text-blue-100">Fill out the form below!</p>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="rounded-lg border p-5 border-gray-600">
+        <form onSubmit={formik.handleSubmit} className="space-y-4">
+          <div className="rounded-lg border p-5 pb-8 border-gray-600">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
+              <div className="relative">
                 <label className="block text-sm font-medium mb-1">Name</label>
                 <input
                   type="text"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
+                  value={formik.values.name}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
                   className="w-full px-3 py-2 border-b border-gray-600 bg-transparent text-white focus:outline-none focus:border-blue-500 focus:ring-0"
                 />
+                {formik.touched.name && formik.errors.name ? (
+                  <div className="absolute left-0 text-red-500 text-sm mt-1">{formik.errors.name}</div>
+                ) : null}
               </div>
-              <div>
+              <div className="relative">
                 <label className="block text-sm font-medium mb-1">Company</label>
                 <input
                   type="text"
                   name="company"
-                  value={formData.company}
-                  onChange={handleChange}
+                 value={formik.values.company}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
                   className="w-full px-3 py-2 border-b border-gray-600 bg-transparent text-white focus:outline-none focus:border-blue-500 focus:ring-0"
                 />
+                {formik.touched.company && formik.errors.company ? (
+                  <div className="absolute left-0 text-red-500 text-sm mt-1">{formik.errors.company}</div>
+                ) : null}
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-7">
-              <div>
+              <div className="relative">
                 <label className="block text-sm font-medium mb-1">Email</label>
                 <input
                   type="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
                   className="w-full px-3 py-2 border-b border-gray-600 bg-transparent text-white focus:outline-none focus:border-blue-500 focus:ring-0"
                 />
+                {formik.touched.email && formik.errors.email ? (
+                  <div className="absolute left-0 text-red-500 text-sm mt-1">{formik.errors.email}</div>
+                ) : null}
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-24 mt-6">
+                <div className="w-24 ">
+                <label className="block text-sm font-medium mb-1">Phone</label>
+
                   <select
                     name="countryCode"
                     className="w-full px-3 py-2 border-b border-gray-600 bg-[#12191B] text-white focus:outline-none focus:border-blue-500 focus:ring-0"
@@ -129,59 +214,88 @@ const GetQuoteForm = ({ closeModal }) => {
                     <option value="">+91</option>
                   </select>
                 </div>
-                <div className="flex-grow">
+                <div className="flex-grow relative">
+                <label className="block text-sm font-medium mb-1">&nbsp;</label>
+
+
                   <input
-                    type="text"
+                    type="number"
                     name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 mt-6 border-b border-gray-600 bg-transparent text-white focus:outline-none focus:border-blue-500 focus:ring-0"
+                    value={formik.values.phone}
+                    onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                    className="w-full px-3 py-2  border-b border-gray-600 bg-transparent text-white focus:outline-none focus:border-blue-500 focus:ring-0"
                     placeholder="Phone Number"
                   />
+                   {formik.touched.phone && formik.errors.phone ? (
+                  <div className="absolute left-0 text-red-500 text-sm mt-1">{formik.errors.phone}</div>
+                ) : null}
                 </div>
               </div>
             </div>
 
             <div className="mt-7">
-              <label className="block text-sm font-medium mb-1">Country</label>
-              <select
-                name="country"
-                value={formData.country}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border-b border-gray-600 bg-[#12191B] text-white focus:outline-none focus:border-blue-500 focus:ring-0"
-              >
-                <option value="" className="bg-[#12191B] text-white">
-                  Select a location
-                </option>
-                {countriesAndCities.map((location) => (
-                  <option
-                    key={location.value}
-                    value={location.value}
-                    className="bg-[#12191B] text-white hover:bg-blue-500"
-                  >
-                    {location.label}
-                  </option>
-                ))}
-              </select>
-            </div>
+      <label className="block text-sm font-medium mb-1">Country</label>
+      <Select
+        name="countryCode"
+        options={options}
+        value={options.find(option => option.value === formik.values.country)}
+        onChange={handleCountryChange}
+        onBlur={formik.handleBlur}
+        className="w-full px-3 py-2 border-b border-gray-600 bg-transparent text-white"
+        styles={{
+          control: (base) => ({
+            ...base,
+            backgroundColor: '#12191',
+            border: 'none',
+            boxShadow: 'none',
+            color: 'white',
+            borderColor: formik.touched.country && formik.errors.country ? 'red' : '#gray-600',
+          }),
+          singleValue: (base) => ({ ...base, color: 'white' }),
+          menu: (base) => ({ ...base, backgroundColor: '#12191B' }),
+          option: (base, state) => ({
+            ...base,
+            backgroundColor: state.isFocused ? '#1f2937' : '#12191B',
+            color: 'white',
+          }),
+          input: (base) => ({
+            ...base,
+            color: 'white',  // Make search input text white
+          }),
+          placeholder: (base) => ({
+            ...base,
+            color: 'white',  // Make placeholder text white
+            opacity: 1, // Ensure the placeholder is fully opaque
+          }),
 
-            <div className="mt-7">
+        }}
+        placeholder="Select a location"
+      />
+      {formik.touched.country && formik.errors.country ? (
+        <div className="text-red-500 text-sm mt-1">{formik.errors.country}</div>
+      ) : null}
+    </div>
+
+            <div className="mt-7 relative">
               <label className="block text-sm font-medium mb-1">
                 Brief Description
               </label>
               <textarea
                 name="brief"
-                value={formData.brief}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border-b border-gray-600 bg-transparent text-white focus:outline-none focus:border-blue-500 focus:ring-0"
-                rows={3}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className="w-full h-24 px-3 py-2 border-b border-gray-600 bg-transparent text-white focus:outline-none focus:border-blue-500 focus:ring-0"
               />
+              {formik.touched.brief && formik.errors.brief ? (
+                <div className="absolute left-0 text-red-500 text-sm mt-1">{formik.errors.brief}</div>
+              ) : null}
             </div>
           </div>
 
           <div className="w-full flex justify-center">
             {/* Button to open modal */}
-        <button onClick={() => router.push('/thank')}  className="mt-8 bg-black text-white px-6 py-3 rounded-full flex items-center space-x-2 inter-semibold">
+        <button type="submit"  className="mt-8 bg-black text-white px-6 py-3 rounded-full flex items-center space-x-2 inter-semibold">
           <span>Submit</span>
           <Image src="/Home/rightArrow.svg" width={20} height={20} alt="Arrow" />
         </button>

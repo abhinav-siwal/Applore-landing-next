@@ -10,14 +10,17 @@ const TestimonialCard = ({ name, media }) => {
 
       {/* Video Frame */}
       <div className="h-[250px] p-2">
-        <iframe
+      <video
           className="w-full h-full"
-          src={media} // Use the media prop for the video link
-          title="Product Video"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+          controls
+          // Use the media prop for the video link
+          src={media} 
+          type="video/mp4" 
+          // Ensure video does not download
+          preload="metadata" 
+        >
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       {/* Product Owner Details */}

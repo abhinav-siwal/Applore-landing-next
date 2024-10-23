@@ -23,7 +23,7 @@ const HeroSection = ({ workedWithData }) => {
   };
 
   return (
-    <div className="relative w-full h-[45rem] bg-[#12191B] overflow-hidden">
+    <div className="relative w-full h-screen bg-[#12191B] overflow-hidden">
       {/* Gradient Backgrounds */}
       <div
         className="absolute -top-20 -left-20 rounded-full h-[320px] w-[350px] filter blur-[100px]"
@@ -50,13 +50,13 @@ const HeroSection = ({ workedWithData }) => {
       </div>
 
       {/* Main Content Section */}
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white -mt-28 p-4">
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white -mt-24 p-4">
         <div className="max-w-[650px]">
-          <h1 className="sm:text-6xl text-5xl font-bold bricolage-grotesque-bold bg-gradient-to-r from-white via-[#FFFFFF99] to-[#FFFFFF] bg-clip-text text-transparent">
+          <h1 className="sm:text-6xl text-4xl font-bold bricolage-grotesque-bold bg-gradient-to-r from-white via-[#FFFFFF99] to-[#FFFFFF] bg-clip-text text-transparent">
             {currentContent.title}{" "}
             <span className="text-[#3A88F6]">{currentContent.highlight}</span>
           </h1>
-          <h2 className="sm:text-6xl text-5xl mt-4 libre-baskerville-regular-italic">
+          <h2 className="sm:text-6xl text-4xl mt-4 libre-baskerville-regular-italic">
             {currentContent.time}
           </h2>
 
@@ -69,7 +69,7 @@ const HeroSection = ({ workedWithData }) => {
         </div>
 
         {/* Button */}
-        <button
+        {/* <button
           onClick={openModal}
           className=" mt-8 bg-black text-white px-6 py-3 rounded-full flex items-center space-x-2 inter-semibold"
         >
@@ -80,6 +80,22 @@ const HeroSection = ({ workedWithData }) => {
             height={20}
             alt="Arrow"
           />
+        </button> */}
+
+        {/* Replaced Button */}
+        <div className="animated-border-box-glow mt-12"></div>
+        <button
+          onClick={openModal} // Keep the onClick handler to open the modal
+          className="animated-border-box bg-gray-900 text-white font-bold py-5 px-11 rounded-full flex gap-2 items-center mx-auto relative group transition-all duration-300 ease-in-out hover:bg-gray-700 hover:translate-y-[-4px] hover:shadow-lg inter-semibold"
+        >
+          <span>{currentContent.buttonText}</span>
+          <Image
+            src="/Home/rightArrow.svg"
+            width={20}
+            height={20}
+            alt="Arrow"
+          />
+          <span className="absolute inset-0 rounded-full border-2 border-gray-100 opacity-0 group-hover:opacity-100 animate-pulse"></span>
         </button>
       </div>
 
