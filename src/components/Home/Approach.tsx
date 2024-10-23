@@ -25,28 +25,28 @@ const Approach = () => {
       title: currentContent.title1,
       content:currentContent.content1,
       icon: "/Home/discoveryIcon.svg",
-      image: "/Home/discoveryImage.svg",
+      image: currentContent.image1,
     },
     {
       id: 2,
       title: currentContent.title2,
       content:currentContent.content2,
       icon: "/Home/designIcon.svg",
-      image: "/Home/designImage.svg",
+      image: currentContent.image2,
     },
     {
       id: 3,
       title: currentContent.title3,
       content:currentContent.content3,
       icon: "/Home/developmentIcon.svg",
-      image: "/Home/developementImage.svg",
+      image: currentContent.image3,
     },
     {
       id: 4,
       title: currentContent.title4,
       content:currentContent.content4,
       icon: "/Home/deploymentIcon.svg",
-      image: "/Home/deploymentImage.svg",
+      image: currentContent.image4,
     },
   ];
 
@@ -55,7 +55,7 @@ const Approach = () => {
   return (
     <div className="relative mt-24 w-full">
       {/* Background Image */}
-      <div className="relative h-[500px]">
+      <div className="relative h-[400px]">
         
          {/* Line image */}
         
@@ -67,12 +67,13 @@ const Approach = () => {
           alt="UI/UX Design"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center gap-3 text-white z-10">
-          <h1 className="text-4xl font-semibold bricolage-grotesque-medium">
-            {currentContent.Embrace}
-          </h1>
-          <h2 className="text-2xl libre-baskerville-regular-italic">
-            {currentContent.mainTitle}
-          </h2>
+        <h1 className="text-4xl font-semibold bricolage-grotesque-medium">
+  <span>{currentContent.Embrace}</span>
+  <span className="text-3xl libre-baskerville-regular-italic ml-2">
+    {currentContent.mainTitle}
+  </span>
+</h1>
+
           <h3 className="text-3xl font-semibold bricolage-grotesque-medium">
             {currentContent.Beyond}{" "}
             <span className="libre-baskerville-regular-italic">{currentContent.Basic}</span>
@@ -132,14 +133,14 @@ const Approach = () => {
         </h1>
       </div>
             {/* Card Display Code */}
-      <div className="flex flex-wrap justify-center gap-[1.5rem] relative px-4 md:px-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center gap-[1.5rem] relative px-4 md:px-10 w-full">
         {" "}
         {/* Added padding on mobile (px-4) */}
         {cards.map((card, index) => (
           <div
             key={card.id}
-            className={`relative w-full sm:w-[20rem] h-[27rem] p-[1rem] shadow-lg flex flex-col justify-between rounded-lg border border-gray-200 overflow-hidden ${
-              index % 2 == 1 ? "mt-[5rem]" : ""
+            className={`relative w-full  h-[27rem] p-[1rem] shadow-lg flex flex-col justify-between rounded-lg border border-gray-200 overflow-hidden ${
+              index % 2 == 1 ? "mt-[5rem]" : "" 
             }`}
           >
 

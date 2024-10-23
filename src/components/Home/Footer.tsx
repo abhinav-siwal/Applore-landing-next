@@ -19,7 +19,7 @@ const Footer = () => {
   return (
     <div className="mt-24">
       {/* Background Image Section */}
-      <div className="relative h-[500px]">
+      <div className="relative h-[400px]">
         <Image
           src="/Home/Approachbg.svg"
           layout="fill"
@@ -59,9 +59,10 @@ const Footer = () => {
         </div>
       </div>
       {/* New black background section */}
-      <div className="bg-black w-full p-6 sm:p-28 relative h-[500px]">
-        {/* Social Media Icons - Mobile Only */}
-        <div className="sm:hidden flex justify-center mb-12">
+      <div className="bg-black w-full p-6 sm:p-32  relative h-[500px]">
+       <div className="md:pl-16">
+         {/* Social Media Icons - Mobile Only */}
+         <div className="sm:hidden flex justify-center mb-12">
           <div className="flex space-x-6">
             <FaFacebookF className="text-2xl text-white cursor-pointer hover:text-blue-600" />
             <FaTwitter className="text-2xl text-white cursor-pointer hover:text-blue-600" />
@@ -102,6 +103,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+       </div>
         {/* Copyright Section */}
         <div className="absolute sm:bottom-4 bottom-10  left-0 right-0 text-white">
           <p className="text-center px-4">

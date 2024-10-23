@@ -26,19 +26,19 @@ const Services: React.FC = () => {
       {/* Services stats */}
       <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-y-[4rem] gap-x-[2rem]">
   <div>
-    <h2 className="sm:text-4xl text-2xl font-bold">{currentContent.statsNum1}</h2>
+    <h2 className="sm:text-4xl text-3xl font-bold">{currentContent.statsNum1}</h2>
     <p className="mt-[0.5rem] text-gray-500">{currentContent.statsText1}</p>
   </div>
   <div>
-    <h2 className="sm:text-4xl text-2xl font-bold">{currentContent.statsNum2}</h2>
+    <h2 className="sm:text-4xl text-3xl font-bold">{currentContent.statsNum2}</h2>
     <p className="mt-[0.5rem] text-gray-500">{currentContent.statsText2}</p>
   </div>
   <div>
-    <h2 className="sm:text-4xl text-2xl font-bold">{currentContent.statsNum3}</h2>
+    <h2 className="sm:text-4xl text-3xl font-bold">{currentContent.statsNum3}</h2>
     <p className="mt-[0.5rem] text-gray-500">{currentContent.statsText3}</p>
   </div>
   <div>
-    <h2 className="sm:text-4xl text-2xl font-bold">{currentContent.statsNum4}</h2>
+    <h2 className="sm:text-4xl text-3xl font-bold">{currentContent.statsNum4}</h2>
     <p className="mt-[0.5rem] text-gray-500">{currentContent.statsText4}</p>
   </div>
 </div>

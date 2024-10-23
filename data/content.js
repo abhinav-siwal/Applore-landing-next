@@ -7,7 +7,7 @@ export const content = {
       highlight: "go-live in",
       time: "60 Days",
       description: "We craft immersive digital experiences that captivate customers, drive engagement, and accelerate growth. Let’s bring your vision to life quickly and efficiently.",
-      buttonText: "Get Your Free Quote Now"
+      buttonText: "Get Free Quote "
     },
     serviceSection: {
       title: "Shaping Ideas into",
@@ -25,7 +25,7 @@ export const content = {
       keyService1:"iOS and Android App Development",
       keyService2:"AI/ML and Blockchain Development",
       keyService3:"Cross Platform Development",
-      keyService3:"Mobile UX/UI design",
+      keyService4:"Mobile UX/UI design",
       desc1:"We build high-performance iOS and Android apps, delivering exceptional user experiences and helping your business stand out on both the App Store and Google Play.",
       desc2:"We deliver AI, Machine Learning, and Blockchain services that enhance efficiency and enable data-driven decisions through intelligent automation and secure applications.",
       desc3:"We provide efficient cross-platform solutions that deliver a consistent experience across devices while minimizing costs.",
@@ -52,7 +52,11 @@ export const content = {
        content2:"Our team of expert designers will create a visually appealing and user-friendly app design that aligns with your brand.",
        content3:"Using the most recent technologies, our experts will create your mobile app, guaranteeing a top-notch and flawless user experience.",
        content4:"Applore will work with you to launch your application, providing ongoing support and maintenance to ensure its success.",
-    },
+       image1:"/Home/discoveryImage.svg",
+       image2:"/Home/designImage.svg",
+       image3:"/Home/developementImage.svg",
+       image4:"/Home/deploymentImage.svg",
+      },
     testimonialSection:{
       heading1:"Bring your ",
       highlight1:"Vision",
@@ -71,7 +75,7 @@ export const content = {
   "/staff": {
     heroSection: {
       title: "Onboard Top Talent",
-      highlight: " less than",
+      highlight: "in less than",
       time: "72 Hours",
       description: "Get access to  top-tier talent and scale your projects efficiently.",
       buttonText: "Hire Talent!",
@@ -120,7 +124,10 @@ export const content = {
        content2:" Our team of specialists at Applore Technologies will allocate the best expertise to your project based on their credentials and experience. ",
        content3:"Our staff augmentation professionals will work with your team to ensure a smooth and seamless integration into your existing processes and systems ",
        content4:"Applore will keep an eye on the progress of your project and, as needed, provide guidance and help. ",
-       
+       image1:"/Home/Assesment.png",
+       image2:"/Home/Staffing.png",
+       image3:"/Home/OnBoarding.png",
+       image4:"/Home/Monitoring.jpeg",
     },
     testimonialSection:{
       staffHeading:"Supercharge Your Team with ",
@@ -133,6 +140,77 @@ export const content = {
       title2:"Empower",
       highlight2:" Your Team Today!",
       buttonText:"Request a call back!"
+    }
+
+  },
+  "/consultancy": {
+    heroSection: {
+      title: "Transform your Business with  ",
+      highlight: "Top-Tier",
+      time: "tech consultants",
+      description: "We are here to elevate your digital strategy, driving extraordinary results for today, tomorrow, and the future. ",
+      buttonText: "Get Started!",
+     
+    },
+    serviceSection: {
+      title: "Your Future, Powered by Customized Tech ",
+      highlight: "Strategies ",
+      description: "At Applore, we craft future-focused technology strategies designed to fuel your business expansion. Our tailored solutions empower you to stay ahead, driving sustainable growth in a fast-evolving digital landscape. ",
+      statsNum1:"8+",
+      statsNum2:"300+",
+      statsNum3:"10+",
+      statsNum4:"50+",
+      statsText1:"Years of Industry Experience",
+      statsText2:"Clients Served",
+      statsText3:"countries  Global Presence",
+      statsText4:"Tech Consultants",
+      keyService:"Unlock Your Business Potential with Applore’s Expert Tech Consultancy ",
+      keyService1:"Stay Ahead of the Competition",
+      keyService2:"Make Smarter Decisions",
+      keyService3:"Minimize Risks",
+      keyService4:"Boost Performance",
+      desc1:"Ensure your tech investments align with your business strategy, delivering maximum results",
+      desc2:"Ensure your tech investments align with your business strategy, delivering maximum results", 
+      desc3:"Ensure your tech investments align with your business strategy, delivering maximum results", 
+      desc4:"Enhance efficiency, productivity, and ROI by optimizing your tech infrastructure", 
+      image1:"/Home/AccessTopTalent.png",
+      image2:"/Home/FasterTime.png",
+      image3:"/Home/CostEfficient.png",
+      image4:"/Home/ExpertiseDemand.png",
+    },
+    ApproachSection:{
+      bulltetPoints1:"Let’s Get Started Today!  ",
+      bulltetPoints2:"Innovative Problem Solving ",
+      bulltetPoints3:"Scalable Solutions ",
+      buttonText:"Let’s Get Started Today! ",
+      mainTitle:"Ensure your tech investments align with your business strategy, delivering maximum results",
+      Embrace:"",
+       Beyond:"",
+       Basic:"",
+       title1:"Discovery:",
+       title2:"Analysis:",
+       title3:"Recommendations:",
+       title4:"Implementation:",
+       content1:" To find the optimal strategy for your IT consultancy project, we begin by understanding your business goals and needs",
+       content2:"Our team of professionals will evaluate your present IT environment to find potential problems and places for development",
+       content3:"Taking into account your objectives, financial limits, and other factors, we will provide the finest technological options for your company ",
+       content4:" We will help you implement the recommended technology solutions, ensuring they are fully functional and secure",
+       image1:"/Home/Assesment.png",
+       image2:"/Home/Staffing.png",
+       image3:"/Home/OnBoarding.png",
+       image4:"/Home/Monitoring.jpeg",
+    },
+    testimonialSection:{
+      staffHeading:"Unlock Smart Solutions with ",
+      staffHighlight:"Expert Tech Guidance",
+      buttonText:"Consult with Us Today! "
+    },
+    footer:{
+      highlight1:"Ready to transform   ",
+      title1:"your",
+      title2:"business with the",
+      highlight2:"power of technology?",
+      buttonText:"Connect With Us Today!"
     }
 
   }

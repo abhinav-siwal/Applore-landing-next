@@ -13,7 +13,7 @@ const Testimonial = ({testimonialData}) => {
   const currentContent = content[currentPath]?.testimonialSection || {};
   return (
     <div>
-      <div className='relative h-[500px] mt-24'>
+      <div className='relative h-[400px] mt-24'>
         <Image 
           src="/Home/Approachbg.svg"
           layout="fill"

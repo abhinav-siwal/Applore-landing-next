@@ -6,7 +6,11 @@ import Image from 'next/image'; // Import the Image component
 const HeroSectionCarousel = ({ workedWithData }) => {
   // Extract only the 'icon' from each item in workedWithData.workedWith
   const logos = workedWithData?.workedWith?.map(item => item.icon) || [];
-  const [visibleLogos, setVisibleLogos] = useState([...logos, ...logos,...logos]); // Duplicate logos for smooth carousel effect
+
+  // If only one logo is provided, duplicate it enough times to fill the screen
+  const visibleLogos = logos.length === 1
+    ? Array(10).fill(logos[0]) // Adjust the number of duplicates for a better effect
+    : [...logos, ...logos]; // Duplicate the array for continuous scrolling
 
   return (
     <div className="overflow-hidden w-full">

@@ -3,16 +3,16 @@ import Image from "next/image";
 import React, { useState } from "react";
 import HeroSectionCarousel from "./lib/HeroSectionCarousel";
 import GetQuoteForm from "./GetQuoteForm"; // Import the modal form
-import { usePathname } from 'next/navigation';
-import { content } from '/data/content.js'; // Import the content object
+import { usePathname } from "next/navigation";
+import { content } from "/data/content.js"; // Import the content object
 
 const HeroSection = ({ workedWithData }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const pathname = usePathname(); // Get router instance
   const currentPath = pathname; // Get the current route
   console.log("currentPath", currentPath);
   // Fetch the content based on the current route
-  const currentContent = content[currentPath]?.heroSection || {}; // Default to an empty object if not found
+  const currentContent = content[currentPath]?.heroSection || {};
 
   const openModal = () => {
     setIsModalOpen(true); // Open modal on button click
@@ -53,7 +53,8 @@ const HeroSection = ({ workedWithData }) => {
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white -mt-28 p-4">
         <div className="max-w-[650px]">
           <h1 className="sm:text-6xl text-5xl font-bold bricolage-grotesque-bold bg-gradient-to-r from-white via-[#FFFFFF99] to-[#FFFFFF] bg-clip-text text-transparent">
-            {currentContent.title} <span className="text-[#3A88F6]">{currentContent.highlight}</span> 
+            {currentContent.title}{" "}
+            <span className="text-[#3A88F6]">{currentContent.highlight}</span>
           </h1>
           <h2 className="sm:text-6xl text-5xl mt-4 libre-baskerville-regular-italic">
             {currentContent.time}
@@ -70,7 +71,7 @@ const HeroSection = ({ workedWithData }) => {
         {/* Button */}
         <button
           onClick={openModal}
-          className="mt-8 bg-black text-white px-6 py-3 rounded-full flex items-center space-x-2 inter-semibold"
+          className=" mt-8 bg-black text-white px-6 py-3 rounded-full flex items-center space-x-2 inter-semibold"
         >
           <span>{currentContent.buttonText}</span>
           <Image
