@@ -6,7 +6,7 @@ const TestimonialCard = ({ name, media }) => {
   const [testimonialName, company] = name.split(', ');
 
   return (
-    <div className="max-w-[350px] h-[450px] rounded-lg shadow-md">
+    <div className="max-w-[350px] h-[450px] rounded-lg shadow-lg">
 
       {/* Video Frame */}
       <div className="h-[250px] p-2">

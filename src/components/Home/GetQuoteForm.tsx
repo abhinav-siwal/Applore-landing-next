@@ -7,8 +7,14 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Select from 'react-select';
 import countryList from 'react-select-country-list';
-import PhoneInput from 'react-phone-input-2';
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+import { countries } from "/data/countries.js";
+
 const GetQuoteForm = ({ closeModal }) => {
+
+// console.log(countries)
+
   const options = useMemo(() => countryList().getData(), []);
   
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -24,7 +30,7 @@ const GetQuoteForm = ({ closeModal }) => {
     .required('Email is required')
     .test('is-email', 'Invalid email format', value => emailRegex.test(value)),
     // code:Yup.string().required('Code is required'),
-    phone: Yup.string()
+    phoneNumber: Yup.string()
     .required('Phone is required')
     .test('is-number', 'Phone must be a number', value => /^\d+$/.test(value)),
     countryCode: Yup.string().required('Country is required'),
@@ -40,12 +46,15 @@ const GetQuoteForm = ({ closeModal }) => {
     initialValues: {
       email: "",
       name: "",
+      company: "",
       countryCode: "",
-      phone: "",
+      phoneCode: "+91",
+      phoneNumber: "",
       interestedIn: "xyz",
       formType: "ENQUIRY",
       contactNumber: "7655675675",
       organisationSize: 0,
+      brief: "",
     },
   
     validationSchema,
@@ -57,17 +66,20 @@ const GetQuoteForm = ({ closeModal }) => {
       const payload = {
         email: values.email,
         name: values.name,
-        countryCode: values.countryCode, // Include country code if available
-        phone: values.phone,
+        company: values.company,
+        countryCode: values.countryCode,
+        phoneCode: values.phoneCode,
+        phoneNumber: values.phoneNumber,
         interestedIn: values.interestedIn,
         formType: values.formType,
         contactNumber: values.contactNumber,
         organisationSize: values.organisationSize,
+        brief: values.brief
       };
     
       try {
-        const response = await axios.post('https://api.applore.in/api/user/addMessage', payload);
-        console.log('Response:', response.data);
+        // const response = await axios.post('https://api.applore.in/api/user/addMessage', payload);
+        // console.log('Response:', response.data);
         router.push('/thank'); // Redirect on form submission
     
         // Handle success (e.g., show a success message, redirect, etc.)
@@ -91,12 +103,16 @@ const GetQuoteForm = ({ closeModal }) => {
  
   
 
-  const countriesAndCities = [
-    { value: "USA", label: "USA" },
-    { value: "India", label: "India" },
-    // Add more countries and cities as needed
-  ];
+  // Transform the countries array to match the format expected by react-select
+  const countryOptions = countries.map((country) => ({
+    value: country.phone,
+    label: `${country.label} (+${country.phone})`,
+  }));
 
+  // Handler for react-select's value change
+  const handleCountryCodeChange = (selectedOption) => {
+    formik.setFieldValue('phoneCode', selectedOption.value); // Set phoneCode in Formik
+  };
 
 
 
@@ -203,35 +219,73 @@ const GetQuoteForm = ({ closeModal }) => {
                 ) : null}
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-24 ">
-                <label className="block text-sm font-medium mb-1">Phone</label>
+      <div className="w-24"> {/* Adjusted width for larger dropdown */}
+        <label className="block text-sm font-medium mb-1">Phone</label>
 
-                  <select
-                    name="countryCode"
-                    className="w-full px-3 py-2 border-b border-gray-600 bg-[#12191B] text-white focus:outline-none focus:border-blue-500 focus:ring-0"
-                  >
-                    <option value="">+1</option>
-                    <option value="">+91</option>
-                  </select>
-                </div>
-                <div className="flex-grow relative">
-                <label className="block text-sm font-medium mb-1">&nbsp;</label>
+        <Select
+          name="phoneCode"
+          className="border-b border-gray-600"
+          value={countryOptions.find(option => option.value === formik.values.phoneCode)} // Set the selected value
+          onChange={handleCountryCodeChange}  // Handle value change
+          options={countryOptions}  // Pass the transformed countries array as options
+          classNamePrefix="react-select"  // Add custom class for styling
+          placeholder="Search country..."  // Placeholder text for the dropdown
+          isSearchable  // Enable search functionality
+          getOptionLabel={(option) => `${option.label}`}  // Show country name and phone code in options
+          getOptionValue={(option) => option.value}  // Use the phone code as the value
+          formatOptionLabel={(option, { context }) =>
+            context === 'menu' ? `${option.label}` : `+${option.value}`
+          }  // Show full label in dropdown but only phone code in selected value
+          components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
+          styles={{
+            control: (provided) => ({
+              ...provided,
+              backgroundColor: '#12191B',
+              border: 'none',
+              borderColor: 'transparent',
+              color: 'white',
+            }),
+            menu: (provided) => ({
+              ...provided,
+              backgroundColor: '#12191B',
+            }),
+            singleValue: (provided) => ({
+              ...provided,
+              color: 'white',
+            }),
+            input: (base) => ({
+              ...base,
+              color: 'white',  // Make search input text white
+            }),
+            option: (provided, state) => ({
+              ...provided,
+              backgroundColor: state.isFocused ? '#2c3e50' : '#12191B',
+              color: 'white',
+            }),
+          }} 
+           placeholder="+91"
+        />
+      </div>
 
+      <div className="flex-grow relative">
+        <label className="block text-sm font-medium mb-1">&nbsp;</label>
 
-                  <input
-                    type="number"
-                    name="phone"
-                    value={formik.values.phone}
-                    onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                    className="w-full px-3 py-2  border-b border-gray-600 bg-transparent text-white focus:outline-none focus:border-blue-500 focus:ring-0"
-                    placeholder="Phone Number"
-                  />
-                   {formik.touched.phone && formik.errors.phone ? (
-                  <div className="absolute left-0 text-red-500 text-sm mt-1">{formik.errors.phone}</div>
-                ) : null}
-                </div>
-              </div>
+        <input
+          type="number"
+          name="phoneNumber"
+          value={formik.values.phoneNumber}  // Bind to Formik
+          onChange={formik.handleChange}  // Handle change with Formik
+          onBlur={formik.handleBlur}  // Handle blur for validation
+          className="w-full px-3 py-2 border-b border-gray-600 bg-transparent text-white focus:outline-none focus:border-blue-500 focus:ring-0"
+          placeholder="Phone Number"
+        />
+        {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
+          <div className="absolute left-0 text-red-500 text-sm mt-1">
+            {formik.errors.phoneNumber}
+          </div>
+        ) : null}
+      </div>
+    </div>
             </div>
 
             <div className="mt-7">
@@ -243,6 +297,7 @@ const GetQuoteForm = ({ closeModal }) => {
         onChange={handleCountryChange}
         onBlur={formik.handleBlur}
         className="w-full px-3 py-2 border-b border-gray-600 bg-transparent text-white"
+        components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
         styles={{
           control: (base) => ({
             ...base,

@@ -10,7 +10,7 @@ import TestimonialCard from "./TestimonialCard";
 
 const CardSlider = ({ testimonialData }) => {
   return (
-    <div className="relative w-9/12 overflow-hidden">
+    <div className="relative w-9/12 overflow-hidde">
       <Carousel className="relative">
         {/* Carousel Items */}
         <CarouselContent className="flex">
@@ -32,7 +32,7 @@ const CardSlider = ({ testimonialData }) => {
         </CarouselContent>
 
         {/* Previous Button */}
-        <CarouselPrevious className="absolute -left-2 top-1/2 transform translate-y-1/2 bg-white text-black p-2 rounded-full z-10">
+        <CarouselPrevious className="absolute -left-3 top-1/2 transform translate-y-1/2 bg-white text-black p-2 rounded-full z-10">
           ‹
         </CarouselPrevious>
 
