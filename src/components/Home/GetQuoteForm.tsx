@@ -10,7 +10,7 @@ import countryList from 'react-select-country-list';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import { countries } from "/data/countries.js";
-
+import { isValidNumber, parsePhoneNumber } from 'libphonenumber-js';
 const GetQuoteForm = ({ closeModal }) => {
 
 // console.log(countries)
@@ -21,18 +21,28 @@ const GetQuoteForm = ({ closeModal }) => {
   
   // Validation schema using Yup
   const validationSchema = Yup.object({
-    name: Yup.string()
-    .strict(true)
-    .required('Name is required'),
+    name: Yup.string().strict(true).required('Name is required'),
     company: Yup.string().required('Company is required'),
     email: Yup.string()
-    .strict(true)
-    .required('Email is required')
-    .test('is-email', 'Invalid email format', value => emailRegex.test(value)),
-    // code:Yup.string().required('Code is required'),
+      .strict(true)
+      .required('Email is required')
+      .test('is-email', 'Invalid email format', (value) => emailRegex.test(value)),
     phoneNumber: Yup.string()
-    .required('Phone is required')
-    .test('is-number', 'Phone must be a number', value => /^\d+$/.test(value)),
+      .required('Phone is required')
+      .test('is-valid-number', 'Invalid phone number', function (value) {
+        const { phoneCode } = this.parent; // Access the phoneCode
+        console.log(phoneCode)
+        try {
+          console.log(">>>>>>>>>>.",isValidNumber(`+${phoneCode}${value}`))
+          // const phoneNumber = parsePhoneNumber(value, phoneCode);
+          
+          // console.log(phoneNumber)
+           // Parse the phone number
+          return isValidNumber(`+${phoneCode}${value}`); // Check if the number is valid
+        } catch (error) {
+          return false; // Return false if parsing fails
+        }
+      }),
     countryCode: Yup.string().required('Country is required'),
     brief: Yup.string().required('Brief description is required'),
   });
@@ -78,8 +88,8 @@ const GetQuoteForm = ({ closeModal }) => {
       };
     
       try {
-        // const response = await axios.post('https://api.applore.in/api/user/addMessage', payload);
-        // console.log('Response:', response.data);
+        const response = await axios.post('https://api.applore.in/api/user/addMessage', payload);
+        console.log('Response:', response.data);
         router.push('/thank'); // Redirect on form submission
     
         // Handle success (e.g., show a success message, redirect, etc.)
