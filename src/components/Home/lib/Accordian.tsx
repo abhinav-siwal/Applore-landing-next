@@ -11,6 +11,7 @@ import {
 import { usePathname } from 'next/navigation';
 import { content } from '/data/content.js'; 
 import { staffFaqs, userFaqs, consultancyFaqs } from '/data/faq.js';
+import Image from 'next/image';
 const Accordian = () => {
   // State to track which accordion item is open
   const [openItem, setOpenItem] = useState(null);
@@ -39,7 +40,7 @@ const Accordian = () => {
 
   return (
     <div className="mx-auto w-9/12">
-      <div className='text-center mt-20'>
+      <div className='text-center mt-20 mb-20'>
         <h1 className="text-4xl font-bold bg-gradient-to-b from-[#1A2224] to-[#1A222480] bg-clip-text text-transparent bricolage-grotesque-bold">
           Frequently Asked Questions
         </h1>
@@ -48,13 +49,13 @@ const Accordian = () => {
         {faqToDisplay?.map((faq, index) => (  // Display only the top 5 items
           <AccordionItem key={faq._id} value={`item-${index + 1}`}>
             <AccordionTrigger onClick={() => toggleItem(`item-${index + 1}`)}>
-              {faq.question}
-              <span className="ml-auto text-xl">
-                {openItem === `item-${index + 1}` ? 'x' : '+'} {/* Change sign based on state */}
+             <span className='text-xl bricolage-grotesque-medium text-left '>{faq.question}</span>
+              <span className="ml-auto text-xl flex-none">
+                {openItem === `item-${index + 1}` ? <Image src="/Home/xmark.svg" width={30} height={30} alt="minus" /> : <Image src="/Home/plus.svg" width={30} height={30} alt="plus" />} {/* Change sign based on state */}
               </span>
             </AccordionTrigger>
             <AccordionContent>
-              {faq.answer}
+              <span className='inter-semibold text-[#3C3C43] text-center '>{faq.answer}</span>
             </AccordionContent>
           </AccordionItem>
         ))}

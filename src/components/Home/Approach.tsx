@@ -109,7 +109,7 @@ const Approach = () => {
 
 
           <div className="mt-10 flex flex-col sm:flex-row sm:space-x-6 text-white">
-            <div className="flex items-start mb-4 sm:mb-0">
+            <div className="flex items-center mb-4 sm:mb-0">
               <Image
                 src="Home/check.svg"
                 alt="Check Icon"
@@ -119,7 +119,7 @@ const Approach = () => {
               />
               <span>{currentContent.bulltetPoints1}</span>
             </div>
-            <div className="flex items-start mb-4 sm:mb-0">
+            <div className="flex items-center mb-4 sm:mb-0">
               <Image
                 src="Home/check.svg"
                 alt="Check Icon"
@@ -129,7 +129,7 @@ const Approach = () => {
               />
               <span>{currentContent.bulltetPoints2}</span>
             </div>
-            <div className="flex items-start mb-4 sm:mb-0">
+            <div className="flex items-center mb-4 sm:mb-0">
               <Image
                 src="Home/check.svg"
                 alt="Check Icon"

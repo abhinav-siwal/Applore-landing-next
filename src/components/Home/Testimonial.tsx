@@ -1,16 +1,27 @@
 "use client";
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import CardSlider from './lib/CardSlider';
 import { usePathname } from 'next/navigation';
 import { content } from '/data/content.js';
+import GetQuoteForm from './GetQuoteForm';
 
 const Testimonial = ({testimonialData}) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const pathname = usePathname(); // Get router instance
   const currentPath = pathname; // Get the current route
   console.log("currentPath", currentPath);
   // Fetch the content based on the current route
   const currentContent = content[currentPath]?.testimonialSection || {};
+
+  const openModal = () => {
+    setIsModalOpen(true); // Open modal on button click
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close modal on close icon click
+  };
+
   return (
     <div>
       <div className='relative h-[400px] mt-24'>
@@ -31,7 +42,7 @@ const Testimonial = ({testimonialData}) => {
             <span className="libre-baskerville-regular-italic">{currentContent.staffHighlight}</span>
           </h1>
           <h2 className="text-4xl bricolage-grotesque-medium">
-          {currentContent.heading2} 
+          {currentContent.heading2}{" "} 
             <span className="font-medium libre-baskerville-regular-italic">{currentContent.highlight2}</span>
           </h2>
 
@@ -48,7 +59,7 @@ const Testimonial = ({testimonialData}) => {
           </button> */}
    {/* Replaced Button */}
  <div className="animated-border-box2-glow mt-12"></div>
-        <button
+        <button onClick={openModal}
           className="animated-border-box2 bg-gray-90 text-black font-bold py-5 px-11 rounded-full flex gap-2 items-center mx-auto relative group transition-all duration-300 ease-in-out hover:bg-gray-700 hover:translate-y-[-4px] hover:shadow-lg inter-semibold"
         >
           <span>{currentContent.buttonText}</span>
@@ -78,6 +89,14 @@ const Testimonial = ({testimonialData}) => {
 
     <CardSlider testimonialData={testimonialData}/>
       </div>
+        {/* Modal Component */}
+        {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="relative bg-[#12191B] rounded-lg p-6 w-full max-w-[1100px]">
+            <GetQuoteForm closeModal={closeModal} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

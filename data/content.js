@@ -5,8 +5,8 @@ export const content = {
     heroSection: {
       title: "From Idea to",
       highlight: "go-live in",
-      time: "60 Days",
-      description: "We craft immersive digital experiences that captivate customers, drive engagement, and accelerate growth. Let’s bring your vision to life quickly and efficiently.",
+      time: "60 days",
+      description: "We craft powerful digital experiences that captivate customers and fuel growth. ",
       buttonText: "Get Free Quote "
     },
     serviceSection: {
@@ -36,9 +36,9 @@ export const content = {
       image4:"/Home/UIDesign.svg",
     },
     ApproachSection:{
-      bulltetPoints1:"Customer solution",
-      bulltetPoints2:"Expert support",
-      bulltetPoints3:"Proven result",
+      bulltetPoints1:"Customer Solution",
+      bulltetPoints2:"Expert Support",
+      bulltetPoints3:"Proven Result",
       buttonText:"Get Free Quote",
        mainTitle:"Innovation",
        Embrace:"Embrace",
@@ -58,7 +58,7 @@ export const content = {
        image4:"/Home/deploymentImage.svg",
       },
     testimonialSection:{
-      heading1:"Bring your ",
+      heading1:"Bring Your ",
       highlight1:"Vision",
       heading2:"to Life with",
       highlight2:"Custom Applications",

@@ -129,7 +129,7 @@ const GetQuoteForm = ({ closeModal }) => {
 
   return (
     <div className="fixed inset-0 flex justify-center items-center text-white  z-50">
-      <div className="w-full max-w-[1100px] h-[750px] p-6 bg-[#12191B] rounded-lg shadow-md relative overflow-hidden overflow-y-auto">
+      <div className="w-full h-full lg:w-[80%] lg:h-[94%] scrollbar-none p-6 bg-[#12191B] rounded-lg shadow-md relative overflow-hidden overflow-y-auto">
       <div
         className="absolute -top-32 left-[200px] rounded-full h-[200px] w-[200px] filter blur-[100px]"
         style={{ background: "radial-gradient(circle, #5E6EF9, #5E6EF9)" }}
@@ -148,7 +148,7 @@ const GetQuoteForm = ({ closeModal }) => {
           viewBox="0 0 32 32"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute sm:top-12 top-7 sm:right-5 right-3 cursor-pointer"
+          className="absolute sm:top-20 top-7 sm:right-10 right-3 cursor-pointer"
           onClick={closeModal}
         >
           <g id="fi_1617543" clipPath="url(#clip0_1100_2117)">
@@ -175,11 +175,11 @@ const GetQuoteForm = ({ closeModal }) => {
           </defs>
         </svg>
 
-        <h2 className="text-2xl font-bold mb-2 sm:text-5xl mt-5">
+        <h2 className="text-3xl font-bold mb-2 sm:text-5xl mt-12  ">
   <span className="bricolage-grotesque-bold  bg-gradient-to-r from-white via-[#FFFFFF99] to-[#FFFFFF] bg-clip-text text-transparent">Ready to create <span className="libre-baskerville-regular-italic">your</span> app?</span>
 </h2>
 
-        <p className="mb-6 text-sm text-blue-100">Fill out the form below!</p>
+        <p className="mb-6 text-sm text-blue-100 inter-light text-[#D9D9D9]">Fill out the form below!</p>
 
         <form onSubmit={formik.handleSubmit} className="space-y-4">
           <div className="rounded-lg border p-5 pb-8 border-gray-600">
@@ -360,9 +360,24 @@ const GetQuoteForm = ({ closeModal }) => {
 
           <div className="w-full flex justify-center">
             {/* Button to open modal */}
-        <button type="submit"  className="mt-8 bg-black text-white px-6 py-3 rounded-full flex items-center space-x-2 inter-semibold">
+        {/* <button type="submit"  className="mt-8 bg-black text-white px-6 py-3 rounded-full flex items-center space-x-2 inter-semibold">
           <span>Submit</span>
           <Image src="/Home/rightArrow.svg" width={20} height={20} alt="Arrow" />
+        </button> */}
+           {/* Replaced Button */}
+        <div className="animated-border-box-glow mt-12"></div>
+        <button type="submit"
+           // Keep the onClick handler to open the modal
+          className="animated-border-box bg-gray-90 text-white font-bold py-5 px-11 rounded-full flex gap-2 items-center mx-auto relative group transition-all duration-300 ease-in-out hover:bg-gray-700 hover:translate-y-[-4px] hover:shadow-lg inter-semibold"
+        >
+          <span>Submit</span>
+          <Image
+            src="/Home/rightArrow.svg"
+            width={20}
+            height={20}
+            alt="Arrow"
+          />
+          <span className="absolute inset-0 rounded-full border-2 border-gray-100 opacity-0 group-hover:opacity-100 animate-pulse"></span>
         </button>
           </div>
         </form>

@@ -15,7 +15,7 @@ const Services: React.FC = () => {
     <div className="mt-10 mx-auto w-10/12 ">
       {/* Idea section */}
       <div className="mb-[2rem]">
-        <h1 className="text-3xl font-bold bricolage-grotesque-bold">
+        <h1 className="text-5xl font-bold bricolage-grotesque-bold">
           {currentContent.title} <span className="italic libre-baskerville-regular-italic">{currentContent.highlight}</span>
         </h1>
         <p className="mt-[1rem] text-gray-800">
@@ -27,26 +27,26 @@ const Services: React.FC = () => {
       <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-y-[4rem] gap-x-[2rem]">
   <div>
     <h2 className="sm:text-4xl text-3xl font-bold">{currentContent.statsNum1}</h2>
-    <p className="mt-[0.5rem] text-gray-500">{currentContent.statsText1}</p>
+    <p className="mt-[0.5rem] text-[#0F0E0E]">{currentContent.statsText1}</p>
   </div>
   <div>
     <h2 className="sm:text-4xl text-3xl font-bold">{currentContent.statsNum2}</h2>
-    <p className="mt-[0.5rem] text-gray-500">{currentContent.statsText2}</p>
+    <p className="mt-[0.5rem] text-[#0F0E0E]">{currentContent.statsText2}</p>
   </div>
   <div>
     <h2 className="sm:text-4xl text-3xl font-bold">{currentContent.statsNum3}</h2>
-    <p className="mt-[0.5rem] text-gray-500">{currentContent.statsText3}</p>
+    <p className="mt-[0.5rem] text-[#0F0E0E]">{currentContent.statsText3}</p>
   </div>
   <div>
     <h2 className="sm:text-4xl text-3xl font-bold">{currentContent.statsNum4}</h2>
-    <p className="mt-[0.5rem] text-gray-500">{currentContent.statsText4}</p>
+    <p className="mt-[0.5rem] text-[#0F0E0E]">{currentContent.statsText4}</p>
   </div>
 </div>
 
 
       {/* Cards */}
       <div className='mt-20'>
-        <h1 className='text-3xl  bricolage-grotesque-bold'>{currentContent.keyService}</h1>
+        <h1 className='text-5xl  bricolage-grotesque-bold'>{currentContent.keyService}</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
           {/* 1st card  */}
           <div>

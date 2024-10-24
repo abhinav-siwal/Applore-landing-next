@@ -62,7 +62,7 @@ const HeroSection = ({ workedWithData }) => {
 
           {/* Adjusted Paragraph */}
           <div className="flex flex-col items-center mt-10">
-            <p className="text-lg bricolage-grotesque-light text-center">
+            <p className="text-lg bricolage-grotesque-light text-center text-[#8C8C8C]">
               {currentContent.description}
             </p>
           </div>
@@ -83,7 +83,7 @@ const HeroSection = ({ workedWithData }) => {
         </button> */}
 
         {/* Replaced Button */}
-        <div className="animated-border-box-glow mt-12"></div>
+        <div className="animated-border-box-glow lg:mt-3 xl:mt-12"></div>
         <button
           onClick={openModal} // Keep the onClick handler to open the modal
           className="animated-border-box bg-gray-90 text-white font-bold py-5 px-11 rounded-full flex gap-2 items-center mx-auto relative group transition-all duration-300 ease-in-out hover:bg-gray-700 hover:translate-y-[-4px] hover:shadow-lg inter-semibold"
@@ -99,8 +99,8 @@ const HeroSection = ({ workedWithData }) => {
         </button>
       </div>
 
-      <div className="absolute sm:bottom-44 bottom-32 w-full text-center text-[#8C8C8C] text-lg bricolage-grotesque-light">
-        {/* Additional content here if needed */}
+      <div className="absolute sm:bottom-44  bottom-32 w-full text-center text-[#8C8C8C] text-lg bricolage-grotesque-light">
+        Trusted By
       </div>
 
       {/* Trusted By Section (Logos) */}

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { usePathname } from 'next/navigation';
 import { content } from '/data/content.js'; 
 import {
@@ -9,12 +9,22 @@ import {
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
+import GetQuoteForm from "./GetQuoteForm";
 const Footer = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const pathname = usePathname(); // Get router instance
   const currentPath = pathname; // Get the current route
   console.log("currentPath", currentPath);
   // Fetch the content based on the current route
   const currentContent = content[currentPath]?.footer || {}; // Default to an empty object if not found
+
+  const openModal = () => {
+    setIsModalOpen(true); // Open modal on button click
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close modal on close icon click
+  };
 
   return (
     <div className="mt-24">
@@ -27,15 +37,15 @@ const Footer = () => {
           alt="UI/UX Design"
           priority
         />
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center gap-3 text-white z-10">
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center gap-3 text-white z-10 mt-10">
           <h1 className="text-4xl">
-            <span className="libre-baskerville-regular-italic text-5xl">{currentContent.highlight1}</span>
-            <span className="normal-case bricolage-grotesque-medium text-5xl">
+            <span className="libre-baskerville-regular-italic sm:text-5xl text-3xl">{currentContent.highlight1}</span>
+            <span className="normal-case bricolage-grotesque-medium text-3xl sm:text-5xl">
            {" "}   {currentContent.title1}
             </span>{" "}
             <br />
-            <div className="text-3xl mt-4">
-              <span className="bricolage-grotesque-medium text-4xl">
+            <div className="sm:text-5xl text-3xl  sm:mt-4">
+              <span className="bricolage-grotesque-medium sm:text-5xl text-3xl">
               {currentContent.title2}
               </span>{" "}
               <span className="libre-baskerville-regular-italic">{currentContent.highlight2}</span>
@@ -56,6 +66,7 @@ const Footer = () => {
            {/* Replaced Button */}
  <div className="animated-border-box2-glow mt-12"></div>
         <button
+        onClick={openModal}
            // Keep the onClick handler to open the modal
           className="animated-border-box2 bg-gray-90 text-black font-bold py-5 px-11 rounded-full flex gap-2 items-center mx-auto relative group transition-all duration-300 ease-in-out hover:bg-gray-700 hover:translate-y-[-4px] hover:shadow-lg inter-semibold"
         >
@@ -70,7 +81,7 @@ const Footer = () => {
         </button>
 
 
-          <p className="mt-10 bricolage-grotesque-medium">
+          <p className="mt-10 bricolage-grotesqu-light">
             Our Clients are backed by top Investors
           </p>
         </div>
@@ -90,22 +101,22 @@ const Footer = () => {
         {/* Address section */}
         <div className="flex flex-col sm:flex-row justify-between text-white">
           <div className="mb-8 sm:mb-0 pl-4 sm:pl-0">
-            <h1 className="bricolage-grotesque-bold">Addresses</h1>
+            <h1 className="bricolage-grotesque-light">Addresses</h1>
             <div className="flex items-center mt-4">
               <img src="/Home/india.svg" alt="Country Flag" className="mr-2" />
-              <span className="bricolage-grotesque-medium">
+              <span className="inter-regular">
                 803, Pegasus Tower, Sector 68, Noida, India
               </span>
             </div>
             <div className="flex items-center mt-4">
               <img src="/Home/germany.svg" alt="Country Flag" className="mr-2" />
-              <span className="bricolage-grotesque-medium">
+              <span className="inter-regular">
                 Lohhof 5, Hamburg, Germany, 20535
               </span>
             </div>
             <div className="flex items-center mt-4">
               <img src="/Home/america.svg" alt="Country Flag" className="mr-2" />
-              <span className="bricolage-grotesque-medium">
+              <span className="inter-regular">
                 8 The Green, Suite R, Dover, DE 19901, United States
               </span>
             </div>
@@ -128,6 +139,14 @@ const Footer = () => {
           </p>
         </div>
       </div>
+        {/* Modal Component */}
+        {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="relative bg-[#12191B] rounded-lg p-6 w-full max-w-[1100px]">
+            <GetQuoteForm closeModal={closeModal} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
