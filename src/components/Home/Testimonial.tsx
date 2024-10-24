@@ -36,7 +36,7 @@ const Testimonial = ({testimonialData}) => {
           </h2>
 
             {/* Button */}
-            <button className="mt-8 bg-white text-black inter-medium px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
+            {/* <button className="mt-8 bg-white text-black inter-medium px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
             <span>{currentContent.buttonText}</span>
             <Image
               src="/Home/rightArrow.svg"
@@ -45,7 +45,24 @@ const Testimonial = ({testimonialData}) => {
               alt="Arrow"
               className="absolute filter invert right-4"
             />
-          </button>
+          </button> */}
+   {/* Replaced Button */}
+ <div className="animated-border-box2-glow mt-12"></div>
+        <button
+          className="animated-border-box2 bg-gray-90 text-black font-bold py-5 px-11 rounded-full flex gap-2 items-center mx-auto relative group transition-all duration-300 ease-in-out hover:bg-gray-700 hover:translate-y-[-4px] hover:shadow-lg inter-semibold"
+        >
+          <span>{currentContent.buttonText}</span>
+          <Image
+            src="/Home/blackArrow.svg"
+            width={20}
+            height={20}
+            alt="Arrow"
+          />
+          <span className="absolute inset-0 rounded-full border-2 border-gray-100  opacity-0 group-hover:opacity-100 animate-pulse"></span>
+        </button>
+
+
+
         </div>
       </div>
       {/* Testimonial */}

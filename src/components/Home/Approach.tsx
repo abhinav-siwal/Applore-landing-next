@@ -80,7 +80,7 @@ const Approach = () => {
           </h3>
 
           {/* Button */}
-          <button onClick={openModal} className="mt-8 bg-white inter-semibold text-black px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
+          {/* <button onClick={openModal} className="mt-8 bg-white inter-semibold text-black px-10 py-3 rounded-full flex items-center libre-baskerville-bold relative">
             <span>{currentContent.buttonText}</span>
             <Image
               src="/Home/rightArrow.svg"
@@ -89,7 +89,24 @@ const Approach = () => {
               alt="Arrow"
               className="absolute filter invert right-4"
             />
-          </button>
+          </button> */}
+
+ {/* Replaced Button */}
+ <div className="animated-border-box2-glow mt-12"></div>
+        <button
+          onClick={openModal} // Keep the onClick handler to open the modal
+          className="animated-border-box2 bg-gray-90 text-black font-bold py-5 px-11 rounded-full flex gap-2 items-center mx-auto relative group transition-all duration-300 ease-in-out hover:bg-gray-700 hover:translate-y-[-4px] hover:shadow-lg inter-semibold"
+        >
+          <span>{currentContent.buttonText}</span>
+          <Image
+            src="/Home/blackArrow.svg"
+            width={20}
+            height={20}
+            alt="Arrow"
+          />
+          <span className="absolute inset-0 rounded-full border-2 border-gray-100  opacity-0 group-hover:opacity-100 animate-pulse"></span>
+        </button>
+
 
           <div className="mt-10 flex flex-col sm:flex-row sm:space-x-6 text-white">
             <div className="flex items-start mb-4 sm:mb-0">

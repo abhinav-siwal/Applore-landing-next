@@ -158,6 +158,8 @@ body {
   animation: none; /* Pause the animation */
 }
 
+/* Hero Section Animated Button*/
+
 .animated-border-box, .animated-border-box-glow{
   /* position: absolute; */
   overflow: hidden; 
@@ -221,8 +223,69 @@ body {
 }
 
 
+
+
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+
+/* Animated Border 2 */
+
+.animated-border-box2, .animated-border-box2-glow{
+  /* position: absolute; */
+  overflow: hidden; 
+  z-index: 0;
+  /* Border Radius */
+	border-radius: 9999px;
+}
+
+.animated-border-box2-glow{
+  overflow: hidden;
+  /* Glow Blur */
+  filter: blur(50px);
+}
+
+.animated-border-box2:before, .animated-border-box2-glow:before {
+  content: '';
+  z-index: -2;
+  /* text-align: center; */
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(0deg);
+  position: absolute;
+	width: 99999px;
+	height: 99999px;
+	background-repeat: no-repeat;
+	/* background-position: 0 0; */
+  /*border color, change middle color*/
+	background-image: conic-gradient(#5D1EE5, #eef5ff, #41CDFB 25%);
+  /* change speed here */
+	animation: rotate 4s linear infinite;
+}
+
+.animated-border-box2:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+  /* border width */
+	left: 2px;
+	top: 2px;
+  /* double the px from the border width left */
+	width: calc(100% - 4px);
+	height: calc(100% - 4px);
+  /*bg color*/
+	/* background: #292a2e; */
+	background: #ffff;
+  /*box border radius*/
+	border-radius: 9999px;
+}
+
+@keyframes rotate {
+	100% {
+		transform: translate(-50%, -50%) rotate(1turn);
+	}
 }

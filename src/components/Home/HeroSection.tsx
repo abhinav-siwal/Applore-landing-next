@@ -86,7 +86,7 @@ const HeroSection = ({ workedWithData }) => {
         <div className="animated-border-box-glow mt-12"></div>
         <button
           onClick={openModal} // Keep the onClick handler to open the modal
-          className="animated-border-box bg-gray-900 text-white font-bold py-5 px-11 rounded-full flex gap-2 items-center mx-auto relative group transition-all duration-300 ease-in-out hover:bg-gray-700 hover:translate-y-[-4px] hover:shadow-lg inter-semibold"
+          className="animated-border-box bg-gray-90 text-white font-bold py-5 px-11 rounded-full flex gap-2 items-center mx-auto relative group transition-all duration-300 ease-in-out hover:bg-gray-700 hover:translate-y-[-4px] hover:shadow-lg inter-semibold"
         >
           <span>{currentContent.buttonText}</span>
           <Image
