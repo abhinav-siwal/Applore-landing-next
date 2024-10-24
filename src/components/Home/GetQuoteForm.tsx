@@ -250,7 +250,7 @@ const GetQuoteForm = ({ closeModal }) => {
           styles={{
             control: (provided) => ({
               ...provided,
-              backgroundColor: '#12191B',
+              backgroundColor: 'transparent',
               border: 'none',
               borderColor: 'transparent',
               color: 'white',
