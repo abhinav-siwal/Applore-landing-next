@@ -145,7 +145,7 @@ const Approach = () => {
 
       {/* Title Image Above Cards */}
       <div className="flex justify-center my-10 ">
-        <h1 className="text-4xl bricolage-grotesque-bold bg-gradient-to-b from-[#1A2224] to-[#1A222480] bg-clip-text text-transparent">
+        <h1 className="sm:text-5xl text-3xl bricolage-grotesque-bold bg-gradient-to-b from-[#1A2224] to-[#1A222480] bg-clip-text text-transparent">
           Our Approach
         </h1>
       </div>
