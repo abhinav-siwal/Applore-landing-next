@@ -234,7 +234,7 @@ const GetQuoteForm = ({ closeModal }) => {
 
         <Select
           name="phoneCode"
-          className="border-b border-gray-600"
+          className="border-b border-gray-600 scrollbar-none"
           value={countryOptions.find(option => option.value === formik.values.phoneCode)} // Set the selected value
           onChange={handleCountryCodeChange}  // Handle value change
           options={countryOptions}  // Pass the transformed countries array as options

@@ -52,11 +52,11 @@ const HeroSection = ({ workedWithData }) => {
       {/* Main Content Section */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white -mt-24 p-4">
         <div className="max-w-[650px]">
-          <h1 className="sm:text-6xl text-4xl font-bold bricolage-grotesque-bold bg-gradient-to-r from-white via-[#FFFFFF99] to-[#FFFFFF] bg-clip-text text-transparent">
+          <h1 className="sm:text-6xl text-5xl font-bold bricolage-grotesque-bold bg-gradient-to-r from-white via-[#FFFFFF99] to-[#FFFFFF] bg-clip-text text-transparent">
             {currentContent.title}{" "}
             <span className="text-[#3A88F6]">{currentContent.highlight}</span>
           </h1>
-          <h2 className="sm:text-6xl text-4xl mt-4 libre-baskerville-regular-italic">
+          <h2 className="sm:text-6xl text-5xl mt-4 libre-baskerville-regular-italic">
             {currentContent.time}
           </h2>
 

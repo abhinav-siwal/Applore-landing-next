@@ -33,7 +33,7 @@ export const content = {
       image1:"/Home/AndIos.jpeg",
       image2:"/Home/Aiml.jpeg",
       image3:"/Home/CrossPlatform.svg",
-      image4:"/Home/UIDesign.svg",
+      image4:"/Home/Designer.svg",
     },
     ApproachSection:{
       bulltetPoints1:"Customer Solution",
