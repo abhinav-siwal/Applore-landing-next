@@ -92,7 +92,7 @@ const Approach = () => {
           </button> */}
 
  {/* Replaced Button */}
- <div className="animated-border-box2-glow mt-12"></div>
+ <div className="animated-border-box2-glow mt-8s"></div>
         <button
           onClick={openModal} // Keep the onClick handler to open the modal
           className="animated-border-box2 bg-gray-90 text-black font-bold py-5 px-11 rounded-full flex gap-2 items-center mx-auto relative group transition-all duration-300 ease-in-out hover:bg-gray-700 hover:translate-y-[-4px] hover:shadow-lg inter-semibold"
@@ -176,7 +176,7 @@ const Approach = () => {
             </div>
             {/* Title and Description at the Top */}
             <div className="flex flex-col items- mt-4 absolute top-14">
-              <h3 className="text-lg font-semibold z-10 bricolage-grotesque-bold">
+              <h3 className="text-2xl font-semibold z-10 bricolage-grotesque-bold">
                 {card.title}
               </h3>
               <p className="z-10 text-base libre-baskerville-regular-italic mt-3">

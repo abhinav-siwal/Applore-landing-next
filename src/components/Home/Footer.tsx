@@ -101,7 +101,7 @@ const Footer = () => {
         {/* Address section */}
         <div className="flex flex-col sm:flex-row justify-between text-white">
           <div className="mb-8 sm:mb-0 pl-4 sm:pl-0">
-            <h1 className="bricolage-grotesque-light">Addresses</h1>
+            <h1 className="bricolage-grotesque-light text-xl">Addresses</h1>
             <div className="flex items-center mt-4">
               <img src="/Home/india.svg" alt="Country Flag" className="mr-2" />
               <span className="inter-regular">

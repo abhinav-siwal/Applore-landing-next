@@ -18,28 +18,28 @@ const Services: React.FC = () => {
         <h1 className="text-5xl font-bold bricolage-grotesque-bold">
           {currentContent.title} <span className="italic libre-baskerville-regular-italic">{currentContent.highlight}</span>
         </h1>
-        <p className="mt-[1rem] text-gray-800">
+        <p className="mt-8 text-gray-800 text-2xl ">
          {currentContent.description}
         </p>
       </div>
 
       {/* Services stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-y-[4rem] gap-x-[2rem]">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-y-[4rem] gap-x-[2rem] mt-16">
   <div>
     <h2 className="sm:text-4xl text-3xl font-bold">{currentContent.statsNum1}</h2>
-    <p className="mt-[0.5rem] text-[#0F0E0E]">{currentContent.statsText1}</p>
+    <p className="mt-[0.5rem] text-[#0F0E0E] text-xl">{currentContent.statsText1}</p>
   </div>
   <div>
     <h2 className="sm:text-4xl text-3xl font-bold">{currentContent.statsNum2}</h2>
-    <p className="mt-[0.5rem] text-[#0F0E0E]">{currentContent.statsText2}</p>
+    <p className="mt-[0.5rem] text-[#0F0E0E] text-xl">{currentContent.statsText2}</p>
   </div>
   <div>
     <h2 className="sm:text-4xl text-3xl font-bold">{currentContent.statsNum3}</h2>
-    <p className="mt-[0.5rem] text-[#0F0E0E]">{currentContent.statsText3}</p>
+    <p className="mt-[0.5rem] text-[#0F0E0E] text-xl">{currentContent.statsText3}</p>
   </div>
   <div>
     <h2 className="sm:text-4xl text-3xl font-bold">{currentContent.statsNum4}</h2>
-    <p className="mt-[0.5rem] text-[#0F0E0E]">{currentContent.statsText4}</p>
+    <p className="mt-[0.5rem] text-[#0F0E0E] text-xl">{currentContent.statsText4}</p>
   </div>
 </div>
 
@@ -47,7 +47,7 @@ const Services: React.FC = () => {
       {/* Cards */}
       <div className='mt-20'>
         <h1 className='text-5xl  bricolage-grotesque-bold'>{currentContent.keyService}</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 ">
           {/* 1st card  */}
           <div>
   <Image

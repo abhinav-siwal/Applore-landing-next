@@ -35,14 +35,14 @@ const Testimonial = ({testimonialData}) => {
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center gap-3 text-white z-10 p-2  ">
           <h1 className="text-4xl font-semibold bricolage-grotesque-medium">
             {currentContent.heading1} 
-            <span className="libre-baskerville-regular-italic">{currentContent.highlight1}</span>
+            <span className="libre-baskerville-regular-italic">{" "}{currentContent.highlight1}</span>
           </h1>
           <h1 className="text-4xl font-semibold bricolage-grotesque-medium">
             {currentContent.staffHeading} 
             <span className="libre-baskerville-regular-italic">{currentContent.staffHighlight}</span>
           </h1>
           <h2 className="text-4xl bricolage-grotesque-medium">
-          {currentContent.heading2}{" "} 
+         {currentContent.heading2}{" "} 
             <span className="font-medium libre-baskerville-regular-italic">{currentContent.highlight2}</span>
           </h2>
 
