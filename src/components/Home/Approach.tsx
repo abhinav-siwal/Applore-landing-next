@@ -67,14 +67,14 @@ const Approach = () => {
           alt="UI/UX Design"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center gap-3 text-white z-10">
-        <h1 className="text-4xl font-semibold bricolage-grotesque-medium">
+        <h1 className="text-4xl sm:text-5xl font-semibold bricolage-grotesque-medium">
   <span>{currentContent.Embrace}</span>
-  <span className="text-3xl libre-baskerville-regular-italic ml-2">
+  <span className="text-4xl sm:text-5xl libre-baskerville-regular-italic ml-2">
     {currentContent.mainTitle}
   </span>
 </h1>
 
-          <h3 className="text-3xl font-semibold bricolage-grotesque-medium">
+          <h3 className="text-4xl sm:text-5xl font-semibold bricolage-grotesque-medium">
             {currentContent.Beyond}{" "}
             <span className="libre-baskerville-regular-italic">{currentContent.Basic}</span>
           </h3>

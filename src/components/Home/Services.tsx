@@ -57,7 +57,7 @@ const Services: React.FC = () => {
     height={400}
     className=" w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
   />
-  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">{currentContent.keyService1}</h2>
+  <h2 className="text-2xl font-bold mt-5 bricolage-grotesque-medium ">{currentContent.keyService1}</h2>
   <p className='opacity-80'>{currentContent.desc1}</p>
 </div>
 {/* 2nd */}
@@ -69,7 +69,7 @@ const Services: React.FC = () => {
     height={400}
     className=" w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
   />
-  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">{currentContent.keyService2}</h2>
+  <h2 className="text-2xl font-bold mt-5 bricolage-grotesque-medium ">{currentContent.keyService2}</h2>
   <p className='opacity-80'>{currentContent.desc2}</p>
 </div>
 {/* 3rd */}
@@ -81,7 +81,7 @@ const Services: React.FC = () => {
     height={400}
     className=" w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
   />
-  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">{currentContent.keyService3}</h2>
+  <h2 className="text-2xl font-bold mt-5 bricolage-grotesque-medium ">{currentContent.keyService3}</h2>
   <p className='opacity-80'>{currentContent.desc3} </p>
 </div>
 {/* 4rth */}
@@ -93,7 +93,7 @@ const Services: React.FC = () => {
     height={400}
     className=" w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
   />
-  <h2 className="text-xl font-bold mt-5 bricolage-grotesque-medium ">{currentContent.keyService4}</h2>
+  <h2 className="text-2xl font-bold mt-5 bricolage-grotesque-medium ">{currentContent.keyService4}</h2>
   <p className='opacity-80'>{currentContent.desc4} </p>
 </div>
 

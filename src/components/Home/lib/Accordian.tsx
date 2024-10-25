@@ -41,7 +41,7 @@ const Accordian = () => {
   return (
     <div className="mx-auto w-9/12">
       <div className='text-center mt-20 mb-20'>
-        <h1 className="text-4xl font-bold bg-gradient-to-b from-[#1A2224] to-[#1A222480] bg-clip-text text-transparent bricolage-grotesque-bold">
+        <h1 className="sm:text-5xl text-4xl font-bold bg-gradient-to-b from-[#1A2224] to-[#1A222480] bg-clip-text text-transparent bricolage-grotesque-bold">
           Frequently Asked Questions
         </h1>
       </div>

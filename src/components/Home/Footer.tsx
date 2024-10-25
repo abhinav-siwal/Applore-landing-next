@@ -39,13 +39,13 @@ const Footer = () => {
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center gap-3 text-white z-10 mt-10">
           <h1 className="text-4xl">
-            <span className="libre-baskerville-regular-italic sm:text-5xl text-3xl">{currentContent.highlight1}</span>
-            <span className="normal-case bricolage-grotesque-medium text-3xl sm:text-5xl">
+            <span className="libre-baskerville-regular-italic sm:text-5xl text-4xl">{currentContent.highlight1}</span>
+            <span className="normal-case bricolage-grotesque-medium text-4xl sm:text-5xl">
            {" "}   {currentContent.title1}
             </span>{" "}
             <br />
-            <div className="sm:text-5xl text-3xl  sm:mt-4">
-              <span className="bricolage-grotesque-medium sm:text-5xl text-3xl">
+            <div className="sm:text-5xl text-4xl  sm:mt-4">
+              <span className="bricolage-grotesque-medium sm:text-5xl text-4xl">
               {currentContent.title2}
               </span>{" "}
               <span className="libre-baskerville-regular-italic">{currentContent.highlight2}</span>
