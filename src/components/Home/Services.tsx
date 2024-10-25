@@ -15,7 +15,7 @@ const Services: React.FC = () => {
     <div className="mt-10 mx-auto w-10/12 ">
       {/* Idea section */}
       <div className="mb-[2rem]">
-        <h1 className="text-5xl font-bold bricolage-grotesque-bold">
+        <h1 className="sm:text-5xl text-4xl font-bold bricolage-grotesque-bold">
           {currentContent.title} <span className="italic libre-baskerville-regular-italic">{currentContent.highlight}</span>
         </h1>
         <p className="mt-8 text-gray-800 text-2xl ">
@@ -46,7 +46,7 @@ const Services: React.FC = () => {
 
       {/* Cards */}
       <div className='mt-20'>
-        <h1 className='text-5xl  bricolage-grotesque-bold'>{currentContent.keyService}</h1>
+        <h1 className='sm:text-5xl text-4xl bricolage-grotesque-bold'>{currentContent.keyService}</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 ">
           {/* 1st card  */}
           <div>
