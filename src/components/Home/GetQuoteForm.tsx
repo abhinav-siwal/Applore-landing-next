@@ -84,7 +84,7 @@ const GetQuoteForm = ({ closeModal }) => {
         formType: values.formType,
         contactNumber: values.contactNumber,
         organisationSize: values.organisationSize,
-        brief: values.brief
+        message: values.brief
       };
     
       try {

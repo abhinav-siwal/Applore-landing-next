@@ -37,16 +37,16 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-W6DPVM8MPX"
         />
         <Script
-          id="google-analytics"
-          dangerouslySetInnerHTML={{
-            __html: `
+  id="google-analytics"
+  dangerouslySetInnerHTML={{
+    __html: `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-W6DPVM8MPX');
     `,
-          }}
-        />
+  }}
+/>
       </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

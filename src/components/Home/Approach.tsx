@@ -169,7 +169,7 @@ const Approach = () => {
           <div
             key={card.id}
             className={`relative w-full  h-[27rem] p-[1rem] shadow-lg flex flex-col justify-between rounded-lg border border-gray-200 overflow-hidden ${
-              index % 2 == 1 ? "sm:mt-[5rem]" : "" 
+              index % 2 == 1 ? "xl:mt-[5rem]" : "" 
             }`}
           >
 
