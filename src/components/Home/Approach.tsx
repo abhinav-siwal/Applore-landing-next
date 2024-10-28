@@ -153,11 +153,23 @@ const Approach = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center gap-[1.5rem] relative px-4 md:px-10 w-full">
         {" "}
         {/* Added padding on mobile (px-4) */}
+
+            {/* <div className="absolute top-40 left-10 ">
+              <Image
+                src="/Home/Line.svg"
+                alt={`Image for `}
+                width={1400} // Set width to 240px
+                height={100}
+                // layout="fill" // Adjust height proportionally if necessary
+                className="" // Rounded corners on top-left and bottom-right
+              />
+            </div> */}
+
         {cards.map((card, index) => (
           <div
             key={card.id}
             className={`relative w-full  h-[27rem] p-[1rem] shadow-lg flex flex-col justify-between rounded-lg border border-gray-200 overflow-hidden ${
-              index % 2 == 1 ? "mt-[5rem]" : "" 
+              index % 2 == 1 ? "sm:mt-[5rem]" : "" 
             }`}
           >
 
@@ -183,6 +195,15 @@ const Approach = () => {
                 {card.content}
               </p>
             </div>
+            {/* <div className="absolute top-40 left-0 ">
+              <Image
+                src="/Home/Line.svg"
+                alt={`Image for ${card.title}`}
+                width={300} // Set width to 240px
+                height={200} // Adjust height proportionally if necessary
+                className="" // Rounded corners on top-left and bottom-right
+              />
+            </div> */}
             {/* Image at the bottom right */}
             <div className="absolute bottom-0 right-0 pr-0 pb-0 p-2">
               <Image

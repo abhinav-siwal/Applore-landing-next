@@ -78,16 +78,16 @@ const Testimonial = ({testimonialData}) => {
       </div>
       {/* Testimonial */}
       <div className='text-center mt-20'>
-        <h1 className="sm:text-5xl text-4xl font-bold bg-gradient-to-b from-[#1A2224] to-[#1A222480] bg-clip-text text-transparent bricolage-grotesque-bold">
+        {/* <h1 className="sm:text-5xl text-4xl font-bold bg-gradient-to-b from-[#1A2224] to-[#1A222480] bg-clip-text text-transparent bricolage-grotesque-bold">
           What our clients say
         </h1>
         <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-b from-[#1A2224] to-[#1A222480] bg-clip-text text-transparent bricolage-grotesque-bold">
           about our work
-        </h1>
+        </h1> */}
       </div>
       <div className='flex justify-center mt-12'>
 
-    <CardSlider testimonialData={testimonialData}/>
+    {/* <CardSlider testimonialData={testimonialData}/> */}
       </div>
         {/* Modal Component */}
         {isModalOpen && (
