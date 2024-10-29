@@ -103,7 +103,7 @@ export const content = {
       desc3:"Save on recruitment, training, and overhead costs while gaining access to highly specialized talent", 
       desc4:"Fill skill gaps quickly with experts across various technologies, from developers to project managers", 
       image1:"/Home/topTalent.jpg",
-      image2:"/Home/FasterTime.jpg",
+      image2:"/Home/fastTime.jpg",
       image3:"/Home/costEfficiency.jpeg",
       image4:"/Home/expertisedemand.jpg",
     },
