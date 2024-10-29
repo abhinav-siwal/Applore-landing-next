@@ -37,16 +37,33 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-W6DPVM8MPX"
         />
         <Script
-  id="google-analytics"
-  dangerouslySetInnerHTML={{
-    __html: `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-W6DPVM8MPX');
-    `,
-  }}
-/>
+          id="google-analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-W6DPVM8MPX');
+            `,
+          }}
+        />
+        
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16638788691"
+        />
+        <Script
+          id="google-ads"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-16638788691');
+            `,
+          }}
+        />
       </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
