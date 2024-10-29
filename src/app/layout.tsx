@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Head from "next/head";
+// import Head from "next/head";
 import Script from "next/script";
 
 const geistSans = localFont({
@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         {/* Google Analytics */}
         <Script
           async
@@ -64,7 +64,18 @@ export default function RootLayout({
             `,
           }}
         />
-      </Head>
+
+{/* <!-- Event snippet for Submit lead form conversion page --> */}
+<Script
+  id="conversion-event"
+  dangerouslySetInnerHTML={{
+    __html: `
+      gtag('event', 'conversion', {'send_to': 'AW-16638788691/dSCHCPGZsMEZENOI__09'});
+    `,
+  }}
+/>
+
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
