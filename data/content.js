@@ -187,7 +187,7 @@ export const content = {
       bulltetPoints2:"Innovative Problem Solving ",
       bulltetPoints3:"Scalable Solutions ",
       buttonText:"Let’s Get Started Today! ",
-      mainTitle:"Ensure your tech investments align with your business strategy, delivering maximum results",
+      mainTitle:"Maximize impact by aligning tech investments with strategy",
       Embrace:"",
        Beyond:"",
        Basic:"",
