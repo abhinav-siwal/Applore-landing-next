@@ -152,11 +152,15 @@ body {
   display: flex;
   animation: marquee 20s linear infinite; /* Adjust duration as needed */
   width: calc(200%); /* Ensure the container is wide enough for both sets of logos */
+  animation-play-state: running; /* Ensures it starts running */
 }
 
 .animate-marquee:hover {
-  animation: none; /* Pause the animation */
+  animation-play-state: paused; /* Pauses animation exactly where it is */
 }
+
+
+
 
 /* Hero Section Animated Button*/
 
