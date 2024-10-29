@@ -47,7 +47,7 @@ export default function RootLayout({
             `,
           }}
         />
-        
+
         {/* Google tag (gtag.js) */}
         <Script
           async
@@ -60,21 +60,20 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-16638788691');
+              gtag('config', 'AW-16638788691');a
             `,
           }}
         />
 
-{/* <!-- Event snippet for Submit lead form conversion page --> */}
-<Script
-  id="conversion-event"
-  dangerouslySetInnerHTML={{
-    __html: `
+        {/* <!-- Event snippet for Submit lead form conversion page --> */}
+        <Script
+          id="conversion-event"
+          dangerouslySetInnerHTML={{
+            __html: `
       gtag('event', 'conversion', {'send_to': 'AW-16638788691/dSCHCPGZsMEZENOI__09'});
     `,
-  }}
-/>
-
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
