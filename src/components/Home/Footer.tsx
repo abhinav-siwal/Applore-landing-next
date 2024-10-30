@@ -34,6 +34,7 @@ const Footer = () => {
           src="/Home/Approachbg.svg"
           layout="fill"
           objectFit="cover"
+           objectPosition="bottom"
           alt="UI/UX Design"
           priority
         />

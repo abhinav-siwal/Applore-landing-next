@@ -8,6 +8,7 @@ const Services: React.FC = () => {
   const pathname = usePathname(); // Get router instance
   const currentPath = pathname; // Get the current route
   console.log("currentPath", currentPath);
+  const isConsultancyPage = pathname === '/consultancy';
   // Fetch the content based on the current route
   const currentContent = content[currentPath]?.serviceSection || {};
 
@@ -91,7 +92,7 @@ const Services: React.FC = () => {
     alt="Design"
     width={400}
     height={400}
-    className=" w-full h-[400px] object-cover object-top rounded-[20px]" // Use object-top to show the top part of the image
+    className={`w-full h-[400px] ${!isConsultancyPage ? 'object-cover' : ''} object-top rounded-[20px]`}f // Use object-top to show the top part of the image
   />
   <h2 className="text-2xl font-bold mt-5 bricolage-grotesque-medium ">{currentContent.keyService4}</h2>
   <p className='opacity-80'>{currentContent.desc4} </p>

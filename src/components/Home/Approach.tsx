@@ -64,6 +64,7 @@ const Approach = () => {
           src="/Home/Approachbg.svg"
           layout="fill"
           objectFit="cover"
+          objectPosition="bottom"
           alt="UI/UX Design"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center gap-3 text-white z-10">
